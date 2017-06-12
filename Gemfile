@@ -1,6 +1,7 @@
 source 'https://rubygems.org/'
 
-gem 'rails', '~> 5.0.0'
+gem 'foundation-rails'
+gem 'rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -19,6 +20,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
+  gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
 end
 
