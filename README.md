@@ -23,6 +23,6 @@ Things you may want to cover:
 
 * ...
 
-![Build Status](https://codeship.com/projects/225912/status?branch=master)
+![Build Status](https://codeship.com/projects/877250d0-31db-0135-0112-36861d6ecb8e/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jtabas/museum-reviews.png)
 ![Coverage Status](https://coveralls.io/repos/jtabas/museum-reviews/badge.png)
