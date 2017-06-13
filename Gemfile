@@ -1,7 +1,7 @@
 source 'https://rubygems.org/'
 gem 'devise'
-gem 'simple_form'
 gem 'foundation-rails'
+gem 'simple_form'
 gem 'rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
