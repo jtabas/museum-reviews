@@ -1,6 +1,6 @@
 source 'https://rubygems.org/'
-gem 'simple_form'
 gem 'devise'
+gem 'simple_form'
 gem 'foundation-rails'
 gem 'rails'
 gem 'pg', '~> 0.18'
