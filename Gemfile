@@ -2,6 +2,7 @@ source 'https://rubygems.org/'
 
 gem 'foundation-rails'
 gem 'rails'
+gem 'rubocop', require: false
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
