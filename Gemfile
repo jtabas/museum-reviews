@@ -1,6 +1,6 @@
 source 'https://rubygems.org/'
 
-
+gem 'rubocop', require: false
 gem 'foundation-rails'
 gem 'rails'
 gem 'pg', '~> 0.18'
