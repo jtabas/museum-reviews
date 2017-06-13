@@ -1,0 +1,6 @@
+<h1> Museums </h1>
+
+
+<% @museums.each do |museum| %>
+<%= link_to museum.name, museum_path(museum)%>
+<% end %>
