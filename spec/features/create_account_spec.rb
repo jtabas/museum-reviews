@@ -21,7 +21,7 @@ feature 'user signs up' do
     visit root_path
     click_link 'Create Account'
     click_button 'Create Account'
-    expect(page).to have_content('can't be blank'')
+    expect(page).to have_content("can't be blank")
     expect(page).to_not have_content('Sign Out')
   end
 
@@ -31,7 +31,7 @@ feature 'user signs up' do
     fill_in 'Password', with: 'Launch'
     fill_in 'Confirm Password', with: 'Lanch'
     click_button 'Create Account'
-    expect(page).to have_content(''doesn't match')
+    expect(page).to have_content("doesn't match")
     expect(page).to_not have_content('Sign Out')
   end
 end
