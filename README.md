@@ -1,4 +1,4 @@
-![Build Status](https://codeship.com/projects/877250d0-31db-0135-0112-36861d6ecb8e/status?branch=master)
+![Build Status](https://codeship.com/projects/af097fc0-3276-0135-ea5a-2aaf83f3c4c0/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jtabas/museum-reviews.png)
 ![Coverage Status](https://coveralls.io/repos/jtabas/museum-reviews/badge.png)
 
