@@ -1,6 +1,5 @@
 class Review < ApplicationRecord
   belongs_to :museum
-  validates_associated :museum
 
   validates :rating,
   presence: true,
