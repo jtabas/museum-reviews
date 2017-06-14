@@ -3,6 +3,10 @@ class MuseumsController < ApplicationController
     @museums = Museum.all
   end
 
+  def new
+    @museum = Museum.new
+  end
+
   def show
     @museum = Museum.find(params[:id])
     @reviews = @museum.reviews
