@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613154959) do
+ActiveRecord::Schema.define(version: 20170614134925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "museums", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.string "hours"
+    t.string "location", null: false
+    t.float "admission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating", null: false
+    t.string "body"
+    t.integer "museum_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["museum_id"], name: "index_reviews_on_museum_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
