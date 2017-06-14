@@ -1,7 +1,5 @@
 class Museum < ApplicationRecord
   has_many :reviews
-  validates_associated :reviews
-
-  validates :name, presence: true
-  validates :address, presence: true
+  has_many :museum_categories
+  has_many :categories, through: :museum_categories
 end

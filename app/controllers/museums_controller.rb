@@ -5,7 +5,5 @@ class MuseumsController < ApplicationController
 
   def show
     @museum = Museum.find(params[:id])
-    @reviews = @museum.reviews
-    @review = Review.new
   end
 end

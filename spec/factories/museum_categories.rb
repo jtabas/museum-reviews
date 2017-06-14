@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :review do
+  factory :museum_category do
     
   end
 end
