@@ -14,13 +14,13 @@ class ReviewsController < ApplicationController
     end
   end
 
-private
+  private
 
-def review_params
-  params.require(:review).permit(
-    :rating,
-    :body,
-    :museum
-  )
+  def review_params
+    params.require(:review).permit(
+      :rating,
+      :body,
+      :museum
+    )
   end
 end
