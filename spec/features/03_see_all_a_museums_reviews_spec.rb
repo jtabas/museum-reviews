@@ -12,8 +12,8 @@ feature 'Museum\'s Reviews Show' do
       expect(page).to have_content(review.rating)
       expect(page).to have_content(review.body)
 
-      expect(page).to have_content('Rating: #{review_no_body.rating}')
+      expect(page).to have_content("Rating: #{review_no_body.rating}")
 
-      expect(page).to have_content('Rating: #{review_no_body.rating}')
+      expect(page).to have_content("Rating: #{review_no_body.rating}")
   end
 end
