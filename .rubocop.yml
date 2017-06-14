@@ -3,7 +3,7 @@ ruby:
 
 AllCops:
   Exclude:
-    - db/schema.rb
+    - 'db/schema.rb'
   #DisplayCopNames: true
 
 AccessorMethodName:
