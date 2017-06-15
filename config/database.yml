@@ -78,7 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: museum-reviews_production
-  username: museum-reviews
