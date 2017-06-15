@@ -82,4 +82,3 @@ production:
   <<: *default
   database: museum-reviews_production
   username: museum-reviews
-  password: <%= ENV['MUSEUM-REVIEWS_DATABASE_PASSWORD'] %>
