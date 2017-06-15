@@ -8,4 +8,7 @@ RSpec.describe Museum, type: :model do
 
   it { should have_valid(:location).when("LOLOLloLLolol") }
   it { should_not have_valid(:location).when(nil, "") }
+
+  it { should have_valid :category}
+  it { should have_valid(:category).when('Art')}
 end
