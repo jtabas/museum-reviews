@@ -13,13 +13,13 @@ class ReviewsController < ApplicationController
       redirect_to museum_path(@museum)
     else
       flash[:notice] = @review.errors.full_messages.to_sentence
-      render :new
+      render 'museums/show'
     end
   end
 
 private
 
   def review_params
-     params.require(:museum).permit(:rating, :body)
+     params.require(:review).permit(:rating, :body)
   end
 end
