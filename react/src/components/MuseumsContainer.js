@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Museum from './Museum';
 
-class MuseumContainer extends Component {
+class MuseumsContainer extends Component {
   constructor(props) {
     super(props)
       this.state = {
@@ -69,10 +69,11 @@ class MuseumContainer extends Component {
     }
 
     let newMuseums = currentMuseums.map((museum, index) => {
+
       return (
         <Museum
-          key={index}
-          id={index + 1}
+          key={index - 1}
+          id={museum.id}
           name={museum.name}
         />
       )
@@ -94,4 +95,4 @@ class MuseumContainer extends Component {
   }
 }
 
-export default MuseumContainer;
+export default MuseumsContainer;

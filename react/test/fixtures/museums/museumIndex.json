@@ -1,0 +1,16 @@
+{
+  "museums": [
+    {
+      "id":1,
+      "name":"Barnes Foundation"
+    },
+    {
+      "id":2,
+      "name":"Eastern State Penitentiary"
+    },
+    {
+      "id":3,
+      "name":"Philadelphia Museum of Art"
+    }
+  ]
+}
