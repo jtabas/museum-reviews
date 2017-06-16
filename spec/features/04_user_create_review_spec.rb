@@ -13,7 +13,7 @@ feature 'Museum\'s Reviews Create' do
     expect(page).to have_content(review.rating)
     expect(page).to have_content(review.body)
   end
-  scenario 'User tries t create a review with empty fields' do
+  scenario 'User tries to create a review with empty fields' do
     visit museum_path(museum)
     fill_in 'Rating', with: ''
     fill_in 'Body', with: ''
