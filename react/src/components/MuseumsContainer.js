@@ -15,13 +15,17 @@ class MuseumContainer extends Component {
   }
 
   previousPage(event) {
-    let newPage = this.state.currentPage - 1;
-    this.setState({ currentPage: newPage })
+    if (this.state.currentPage != 1) {
+      let newPage = this.state.currentPage - 1;
+      this.setState({ currentPage: newPage })
+    }
   }
 
   nextPage(event) {
-    let newPage = this.state.currentPage + 1;
-    this.setState({ currentPage: newPage })
+    if (this.state.currentPage * this.state.museumsPerPage < this.state.museums.length) {
+      let newPage = this.state.currentPage + 1;
+      this.setState({ currentPage: newPage })
+    }
   }
 
   getData() {
@@ -42,21 +46,25 @@ class MuseumContainer extends Component {
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
 
-  componentDidMount() {
-    this.getData()
+  componentWillMount() {
+    this.getData();
   }
 
   render() {
+    console.log("Render");
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let indexOfFirstMuseum = indexOfLastMuseum - this.state.museumsPerPage;
 
     let currentMuseums;
 
-    if (indexOfFirstMuseum < 0 ) {
+    if (indexOfFirstMuseum <= 0 ) {
+      console.log("First Page");
       currentMuseums = this.state.museums.slice(0, 6);
     } else if (indexOfLastMuseum > this.state.museums.length) {
+      console.log("Last Page");
       currentMuseums = this.state.museums.slice(this.state.museums.length - 6, this.state.museums.length)
     } else {
+      console.log("Continuing Page");
       currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
     }
 
@@ -69,10 +77,18 @@ class MuseumContainer extends Component {
         />
       )
     });
-
     return (
       <div>
+        <h1>Museums</h1>
         {newMuseums}
+        <div className="text-center">
+          <button className="hollow button numbers" onClick={this.previousPage}>
+            Previous Page
+          </button>
+          <button className="hollow button numbers" onClick={this.nextPage}>
+            Next Page
+          </button>
+        </div>
       </div>
     )
   }
