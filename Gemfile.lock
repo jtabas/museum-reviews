@@ -66,6 +66,10 @@ GEM
     docile (1.1.5)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.6.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -73,6 +77,10 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faraday (0.12.1)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.11.0.1)
+      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
     foundation-rails (6.3.1.0)
       railties (>= 3.1.0)
@@ -110,6 +118,8 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    multipart-post (2.0.0)
+    netrc (0.11.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -163,6 +173,10 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -201,6 +215,7 @@ GEM
     shoulda-context (1.2.2)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    simple_oauth (0.3.1)
     simplecov (0.14.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -243,6 +258,10 @@ GEM
     websocket-extensions (0.1.2)
     xpath (2.1.0)
       nokogiri (~> 1.3)
+    yelp (2.1.4)
+      faraday (~> 0.8, >= 0.8.0)
+      faraday_middleware (~> 0.8, >= 0.8.0)
+      simple_oauth (~> 0.3.1)
 
 PLATFORMS
   ruby
@@ -250,6 +269,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coveralls
+  dotenv-rails
   factory_girl_rails
   foundation-rails
   http
@@ -262,6 +282,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails
   rails_12factor
+  rest-client
   rspec-rails (~> 3.5)
   rubocop
   sass-rails (~> 5.0)
@@ -272,6 +293,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   valid_attribute
+  yelp
 
 BUNDLED WITH
    1.15.1

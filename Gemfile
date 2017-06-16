@@ -10,6 +10,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'json'
 gem 'http'
+gem 'dotenv-rails'
+gem 'rest-client'
+gem 'yelp'
 
 group :development do
   gem 'listen', '~> 3.0.5'
