@@ -1,5 +1,5 @@
 let createResponseFromFixture = (fixtureFilename, statusCode = 200) => {
-  let fixture = window.__fixtures__["test/fixtures/" + fixtureFilename];
+  let fixture = window.__fixtures__['test/fixtures/' + fixtureFilename];
   let responseBody = JSON.stringify(fixture);
   let response = new Response(responseBody, {
     status: statusCode,
