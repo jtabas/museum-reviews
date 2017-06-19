@@ -6,8 +6,10 @@ class ReviewsController < ApplicationController
 
   def create
     @museum = Museum.find(params[:museum_id])
-    @review = Review.create(review_params)
+    @review = Review.new(review_params)
     @review.museum = @museum
+    @review.user = current_user
+    @review.save
     if @review.save
       flash[:notice] = "Review added successfully"
       redirect_to museum_path(@museum)
@@ -17,11 +19,12 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-      @review = review.find(params[:id])
+      @museum = Museum.find(params[:museum_id])
+      @review = Review.find(params[:id])
     end
 
     def update
-      @review = review.find(params[:id])
+      @review = Review.find(params[:id])
       if @review.update(review_params)
         redirect_to review_path(@review)
       else
@@ -39,6 +42,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :body)
+    params.require(:review).permit(:rating, :body, :user)
   end
 end

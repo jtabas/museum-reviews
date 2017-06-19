@@ -1,5 +1,4 @@
 <h1><%= @museum.name %></h1>
-
 Name: <%= @museum.name %><br>
 Description: <%= @museum.description %><br>
 Hours: <%= @museum.hours %><br>
@@ -10,7 +9,7 @@ Admission: <%= @museum.admission %><br>
 <%= render partial: "layouts/review", collection: @reviews %>
 
 <% if user_signed_in? %>
-  <%= render "layouts/new_review_form" %>
+  <%= render "layouts/review_form" %>
 <% else %>
   <h4> Please sign in or create and account to leave your review. </h4>
   <li><%= link_to "Create Account", new_user_registration_path%></li>

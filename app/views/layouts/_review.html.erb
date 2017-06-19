@@ -2,7 +2,4 @@
 <% if review.body %>
   <p><%= review.body %></p>
 <% end %>
-<% binding.pry %>
-<% if %>
-
-<% end %>
+<%= link_to 'Edit This Review', edit_museum_review_path(review.museum, review), controller: "review", action: "edit" %>
