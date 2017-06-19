@@ -28,8 +28,6 @@ ratings:
   - "**.erb"
   - "**.rb"
   - "**.css"
-  - "**.coffee"
-  - "**.inc"
   - "**.js"
   - "**.module"
 exclude_paths:
@@ -40,3 +38,5 @@ exclude_paths:
 - db/
 - vendor/
 - app/assets/
+- spec/rails_helper.rb
+- spec/spec_helper.rb
