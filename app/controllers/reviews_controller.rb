@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.museum = @museum
     @review.user = current_user
-    @review.save
     if @review.save
       flash[:notice] = "Review added successfully"
       redirect_to museum_path(@museum)
