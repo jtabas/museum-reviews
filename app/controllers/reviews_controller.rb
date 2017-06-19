@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = @review.errors.full_messages.to_sentence
       render 'museums/show'
     end
+  end
 
     def edit
       @review = review.find(params[:id])
