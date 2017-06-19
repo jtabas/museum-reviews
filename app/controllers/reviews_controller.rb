@@ -25,17 +25,20 @@ class ReviewsController < ApplicationController
 
     def update
       @review = Review.find(params[:id])
+      @museum = Museum.find(params[:museum_id])
       if @review.update(review_params)
-        redirect_to review_path(@review)
+        flash[:notice] = "Review Successfully Updated"
+        redirect_to museum_path(@museum)
       else
         render :edit
       end
     end
 
     def destroy
-      @review = review.find(params[:id])
+      @review = Review.find(params[:id])
+      @museum = @review.museum
       @review.destroy
-      redirect_to museums_path
+      redirect_to museum_path(@museum)
     end
   end
 
