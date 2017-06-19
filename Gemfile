@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
-
+ruby '2.3.3'
+gem 'devise'
 gem 'foundation-rails'
 gem 'rails'
 gem 'rubocop', require: false
@@ -14,6 +15,7 @@ gem 'json'
 gem 'rest-client'
 gem 'yelp'
 
+gem 'simple_form'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
