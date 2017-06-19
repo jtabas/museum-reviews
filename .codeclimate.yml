@@ -1,2 +1,2 @@
 exclude_paths:
-- "react/test/"
+- "react/test/*"
