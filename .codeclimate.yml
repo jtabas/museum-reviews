@@ -21,3 +21,5 @@ ratings:
   - app/**
 exclude_paths:
 - react/**/*
+- app/assets/javascripts/application.js
+- app/assets/javascripts/cable.js
