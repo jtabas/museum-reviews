@@ -3,7 +3,7 @@ engines:
     enabled: true
     checks:
     Rubocop/Metrics/ClassLength:
-    enabled: false
+      enabled: false
   golint:
     enabled: true
   eslint:
@@ -23,3 +23,4 @@ exclude_paths:
 - react/**/*
 - app/assets/javascripts/application.js
 - app/assets/javascripts/cable.js
+- db/**/*
