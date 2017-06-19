@@ -6,3 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 museum = Museum.create(name:'The Franklin Institute', description:'Sweet Sweet IMAX', hours:'9:30am to 5:00pm M,T,W,TH,F,S,SU', location:'222 N 20th St, Philadelphia, PA 19103', admission:'$20.00')
+user = User.create(first_name: 'John', last_name: 'Smith', email: 'John.Smith@gmail.com', password: 'Launch', state: 'Pennsylvania', city: 'Philadelphia', username: 'AtTheRealJohnSmith')

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :museums do
-    resources :reviews, only: :create
+    resources :reviews
   end
 end

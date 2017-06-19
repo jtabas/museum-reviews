@@ -1,3 +1,8 @@
+<% if controller.action_name == "show" %>
+<h2>Write a new review</h2>
+<%elsif controller.action_name == "edit" %>
+<h2>Edit your review</h2>
+<%end%>
 <%= form_for [@museum, @review] do |form| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
