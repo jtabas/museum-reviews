@@ -64,8 +64,6 @@ class MuseumsContainer extends Component {
     } else if (indexOfLastMuseum > this.state.museums.length) {
       console.log("Last Page");
       indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
-      debugger;
-
       currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex)
     } else {
       console.log("Continuing Page");
