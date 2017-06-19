@@ -3,4 +3,4 @@ ruby:
   config_file: .rubocop.yml
 
 jshint:
-  ignore_file: react/
+  ignore_file: react/*
