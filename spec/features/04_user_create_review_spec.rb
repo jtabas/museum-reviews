@@ -1,10 +1,13 @@
 require 'rails_helper'
 feature 'Museum\'s Reviews Create' do
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:museum) { FactoryGirl.create(:museum) }
-  let!(:review) { FactoryGirl.create(:review, museum: museum) }
+  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
 
   scenario 'User creates a review' do
+    sign_in_as(user)
     visit museum_path(museum)
+
     fill_in 'Rating', with: 5
     fill_in 'Body', with: 'Awesome Museum!!!...JK'
 
@@ -14,6 +17,7 @@ feature 'Museum\'s Reviews Create' do
     expect(page).to have_content(review.body)
   end
   scenario 'User tries to create a review with empty fields' do
+    sign_in_as(user)
     visit museum_path(museum)
     fill_in 'Rating', with: ''
     fill_in 'Body', with: ''

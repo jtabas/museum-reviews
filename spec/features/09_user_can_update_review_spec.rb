@@ -1,0 +1,36 @@
+require 'rails_helper'
+feature 'User can edit a review' do
+  let!(:museum) { FactoryGirl.create(:museum) }
+  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user ) }
+  let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user ) }
+  let!(:user) { FactoryGirl.create(:user) }
+
+  scenario 'User successfully edits a review' do
+    sign_in_as(user)
+    visit museum_path(museum)
+    click_link('Edit This Review', :match => :first)
+
+    fill_in 'Rating', with: 4
+    fill_in 'Body', with: "Actually it\'s better because now they have dinosaurs."
+    click_button 'Update Review'
+    expect(page).to have_content('Rating: 4')
+    expect(page).to have_content("Actually it\'s better because now they have dinosaurs.")
+    expect(page).to have_content('Review Successfully Updated')
+  end
+
+  scenario 'User unsuccessfully edits a review' do
+    sign_in_as(user)
+    visit museum_path(museum)
+    click_link('Edit This Review', :match => :first)
+
+    fill_in 'Rating', with: ''
+    fill_in 'Body', with: ''
+    click_button 'Update Review'
+    expect(page).to_not have_content('Rating: 3')
+    expect(page).to_not have_content(review.body)
+    expect(page).to_not have_content('Review Successfully Updated')
+    expect(page).to have_content('Rating can\'t be blank')
+    expect(page).to have_content('Rating is not a number')
+    expect(page).to have_content('Rating is not a valid numeric rating (Must be between 1-5)')
+  end
+end

@@ -4,7 +4,7 @@ FactoryGirl.define do
 =======
     rating 3
     body 'this museum was definitely museum-esque. if you want a museum, this is certainly that.'
-
+    user
     museum
 >>>>>>> master
   end
