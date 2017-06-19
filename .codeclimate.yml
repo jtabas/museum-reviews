@@ -1,26 +1,41 @@
 engines:
   rubocop:
     enabled: true
-    checks:
-    Rubocop/Metrics/ClassLength:
-      enabled: false
-  golint:
+  brakeman:
     enabled: true
   eslint:
     enabled: true
   csslint:
     enabled: true
+  coffeelint:
+    enabled: true
+    checks:
+      max_line_length:
+        enabled: false
   duplication:
     enabled: true
+    exclude_paths:
+      - "spec/"
     config:
       languages:
-      - ruby
-      - javascript
+        ruby:
+          mass_threshold: 30
+        javascript:
+
 ratings:
   paths:
-  - app/**
+  - Gemfile.lock
+  - "**.erb"
+  - "**.rb"
+  - "**.css"
+  - "**.coffee"
+  - "**.inc"
+  - "**.js"
+  - "**.module"
 exclude_paths:
-- react/**/*
+- react/
 - app/assets/javascripts/application.js
 - app/assets/javascripts/cable.js
-- db/**/*
+- config/
+- db/
+- vendor/

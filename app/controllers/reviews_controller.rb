@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.create(review_params)
     @review.museum = @museum
     if @review.save
-      flash[:notice] = "Review added successfully"
+      flash[:notice] = 'Review added successfully'
       redirect_to museum_path(@museum)
     else
       flash[:notice] = @review.errors.full_messages.to_sentence
@@ -17,24 +17,24 @@ class ReviewsController < ApplicationController
     end
   end
 
-    def edit
-      @review = review.find(params[:id])
-    end
+  def edit
+    @review = review.find(params[:id])
+  end
 
-    def update
-      @review = review.find(params[:id])
-      if @review.update(review_params)
-        redirect_to review_path(@review)
-      else
-        render :edit
-      end
+  def update
+    @review = review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to review_path(@review)
+    else
+      render :edit
     end
+  end
 
-    def destroy
-      @review = review.find(params[:id])
-      @review.destroy
-      redirect_to museums_path
-    end
+  def destroy
+    @review = review.find(params[:id])
+    @review.destroy
+    redirect_to museums_path
+  end
 
   private
 
