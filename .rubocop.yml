@@ -265,7 +265,7 @@ UnderscorePrefixedVariableName:
 Void:
   Enabled: false
 
-Style/AlignParameters:
+Style/Layout:
   EnforcedStyle: with_fixed_indentation
 
 Style/SymbolProc:
