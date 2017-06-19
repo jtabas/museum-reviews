@@ -53,6 +53,7 @@ class MuseumsContainer extends Component {
   render() {
     console.log("Render");
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
+    let rightBoundIndex = this.state.museums.length;
     let indexOfFirstMuseum = indexOfLastMuseum - this.state.museumsPerPage;
 
     let currentMuseums;
@@ -62,7 +63,10 @@ class MuseumsContainer extends Component {
       currentMuseums = this.state.museums.slice(0, 6);
     } else if (indexOfLastMuseum > this.state.museums.length) {
       console.log("Last Page");
-      currentMuseums = this.state.museums.slice(this.state.museums.length - 6, this.state.museums.length)
+      indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
+      debugger;
+
+      currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex)
     } else {
       console.log("Continuing Page");
       currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
@@ -72,7 +76,7 @@ class MuseumsContainer extends Component {
 
       return (
         <Museum
-          key={index - 1}
+          key={index}
           id={museum.id}
           name={museum.name}
         />
