@@ -1,13 +1,8 @@
-AllCops:
-  RunRailsCops: true
-
-# Commonly used screens these days easily fit more than 80 characters.
 Metrics/LineLength:
   Max: 100
 
 Metrics/MethodLength:
   Max: 20
 
-# Check with yard instead.
 Style/Documentation:
   Enabled: false
