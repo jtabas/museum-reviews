@@ -1,5 +1,5 @@
-require "dotenv-rails"
-require "rest-client"
+require 'dotenv-rails'
+require 'rest-client'
 require 'pry'
 
 Museum.destroy_all
