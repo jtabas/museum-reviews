@@ -35,7 +35,6 @@ class ReviewsController < ApplicationController
       @review.destroy
       redirect_to museums_path
     end
-  end
 
   private
 
