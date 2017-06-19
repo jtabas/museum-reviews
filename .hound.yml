@@ -1,6 +1,3 @@
 # .hound.yml
 ruby:
   config_file: .rubocop.yml
-
-jshint:
-  ignore_file: .jshintignore
