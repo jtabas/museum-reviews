@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'user signs in' do
-  let!(:user) { FactoryGirl.create(:user) }
+  let!(:user) { FactoryGirl.create(:user, email: 'Emailemailemail@email.com') }
   scenario 'existing user specifies a valid username and password' do
     visit root_path
     click_link 'Sign In'

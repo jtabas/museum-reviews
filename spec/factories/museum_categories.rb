@@ -1,4 +1,4 @@
 FactoryGirl.define do
-  factory :vote do
+  factory :museum_category do
   end
 end

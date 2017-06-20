@@ -64,7 +64,7 @@ CyclomaticComplexity:
 Delegate:
   Enabled: false
 
-DeprecatedHashMethods:
+Style/PreferredHashMethods:
   Enabled: false
 
 Documentation:
@@ -125,7 +125,7 @@ LineEndConcatenation:
   Enabled: false
 
 LineLength:
-  Max: 80
+  Max: 110
 
 MethodLength:
   Enabled: false
@@ -265,16 +265,16 @@ UnderscorePrefixedVariableName:
 Void:
   Enabled: false
 
-Style/AlignParameters:
+Style/Layout:
   EnforcedStyle: with_fixed_indentation
 
 Style/SymbolProc:
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 
 Style/UnneededPercentQ:
@@ -284,7 +284,7 @@ Metrics/AbcSize:
   Enabled: false
 
 Metrics/LineLength:
-  Description: 'Limit lines to 80 characters.'
-  StyleGuide: '#80-character-limits'
+  Description: 'Limit lines to 100 characters.'
+  StyleGuide: '#100-character-limits'
   Enabled: true
-  Max: 80
+  Max: 100

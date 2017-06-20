@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
+  root "museums#index"
+
+  namespace :api do
+    namespace :v1 do
+      resources :museums, only: [:index]
+    end
+  end
+
+  devise_for :users,
+    controllers: {
     sessions: 'users/sessions'
   }
 
-  root 'museums#index'
+  namespace :admin do
+    resources :museums
+    resources :reviews
+  end
 
   resources :museums do
     resources :reviews
