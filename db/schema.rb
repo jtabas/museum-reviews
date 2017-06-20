@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170620133336) do
     t.string "name", null: false
     t.string "description"
     t.string "hours"
-    t.string "address", null: false
+    t.string "location", null: false
     t.float "admission"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
