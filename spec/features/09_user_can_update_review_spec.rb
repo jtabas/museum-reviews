@@ -8,7 +8,7 @@ feature 'User can edit a review' do
   scenario 'User successfully edits a review' do
     sign_in_as(user)
     visit museum_path(museum)
-    click_link('Edit This Review', :match => :first)
+    click_link('Edit This Review', match: :first)
 
     fill_in 'Rating', with: 4
     fill_in 'Body', with: "Actually it\'s better because now they have dinosaurs."
