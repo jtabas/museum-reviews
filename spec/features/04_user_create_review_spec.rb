@@ -17,9 +17,8 @@ feature 'Museum\'s Reviews Create' do
     expect(page).to have_content(review.body)
 
   end
-  binding.pry
+
   scenario 'User tries to create a review with empty fields' do
-    binding.pry
     sign_in_as(user)
     visit museum_path(museum)
     fill_in 'Rating', with: ''

@@ -6,9 +6,5 @@ FactoryGirl.define do
     address '222 N 20th St'
     admission 20.0
 
-    factory :museum_skips_validate do
-      to_create {|instance| instance.save(validate: false) }
-    end
-
   end
 end
