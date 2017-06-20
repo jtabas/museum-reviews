@@ -1,8 +1,8 @@
 require 'rails_helper'
 feature 'User can edit a review' do
   let!(:museum) { FactoryGirl.create(:museum) }
-  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user ) }
-  let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user ) }
+  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
+  let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user) }
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'User successfully edits a review' do
@@ -21,7 +21,7 @@ feature 'User can edit a review' do
   scenario 'User unsuccessfully edits a review' do
     sign_in_as(user)
     visit museum_path(museum)
-    click_link('Edit This Review', :match => :first)
+    click_link('Edit This Review', match: :first)
 
     fill_in 'Rating', with: ''
     fill_in 'Body', with: ''

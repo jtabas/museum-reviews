@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require 'dotenv-rails'
 require 'rest-client'
 require 'pry'

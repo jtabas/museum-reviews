@@ -1,7 +1,7 @@
 require 'rails_helper'
 feature 'Only authorized user can destroy a review' do
   let!(:museum) { FactoryGirl.create(:museum) }
-  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user ) }
+  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
   let!(:user) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user, email: 'NotJohnSmith@gmail.com') }
 
