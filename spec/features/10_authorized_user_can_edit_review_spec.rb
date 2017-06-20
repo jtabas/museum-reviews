@@ -2,7 +2,7 @@ require 'rails_helper'
 feature 'Only authorized user can edit a review' do
   let!(:museum) { FactoryGirl.create(:museum, name: "IN Unifrom and Evening Dress") }
   let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
-  let!(:user) { FactoryGirl.create(:user, email: 'lolololololololololollo@gmail.com') }
+  let!(:user) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user, email: 'NotJohnSmith@gmail.com') }
 
   scenario 'User cannot edit a review if not signed in' do
