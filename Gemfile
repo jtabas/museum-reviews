@@ -32,6 +32,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
+  gem 'database_cleaner'
 end
 
 group :production do
