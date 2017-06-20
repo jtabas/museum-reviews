@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'json'
 gem 'rest-client'
 gem 'uglifier', '>= 1.3.0'
+gem 'simple_form'
 
 group :development do
   gem 'listen', '~> 3.0.5'
