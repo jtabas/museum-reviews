@@ -8,7 +8,7 @@ feature 'Museums Show' do
     expect(page).to have_content museum.name
     expect(page).to have_content museum.description
     expect(page).to have_content museum.hours
-    expect(page).to have_content museum.address
+    expect(page).to have_content museum.location
     expect(page).to have_content museum.admission
   end
 end
