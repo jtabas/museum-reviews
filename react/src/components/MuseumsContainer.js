@@ -3,25 +3,25 @@ import Museum from './Museum';
 
 class MuseumsContainer extends Component {
   constructor(props) {
-    super(props)
-      this.state = {
-        museums: [],
-        currentPage: 1,
-        museumsPerPage: 6
-      }
+    super(props);
+    this.state = {
+      museums: [],
+      currentPage: 1,
+      museumsPerPage: 6
+    };
     this.getData = this.getData.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
   }
 
-  previousPage(event) {
-    if (this.state.currentPage != 1) {
+  previousPage (event) {
+    if (this.state.currentPage !== 1) {
       let newPage = this.state.currentPage - 1;
       this.setState({ currentPage: newPage });
     }
   }
 
-  nextPage(event) {
+  nextPage (event) {
     if (this.state.currentPage * this.state.museumsPerPage < this.state.museums.length) {
       let newPage = this.state.currentPage + 1;
       this.setState({ currentPage: newPage });
@@ -50,13 +50,13 @@ class MuseumsContainer extends Component {
     this.getData();
   }
 
-  render() {
+  render () {
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let rightBoundIndex = this.state.museums.length;
     let indexOfFirstMuseum = indexOfLastMuseum - this.state.museumsPerPage;
     let currentMuseums;
 
-    if (indexOfFirstMuseum <= 0 ) {
+    if (indexOfFirstMuseum <= 0) {
       currentMuseums = this.state.museums.slice(0, 6);
     } else if (indexOfLastMuseum > this.state.museums.length) {
       indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
