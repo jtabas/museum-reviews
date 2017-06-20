@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = @review.errors.full_messages.to_sentence
       render 'museums/show'
     end
+  end
 
     def edit
       @museum = Museum.find(params[:museum_id])
@@ -39,7 +40,6 @@ class ReviewsController < ApplicationController
       @review.destroy
       redirect_to museum_path(@museum)
     end
-  end
 
   private
 

@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $(".upvote").on("click",(function(event) {
+    console.log("updooted")
     vote(true);
   }))
   $(".downvote").on("click",(function(event) {
