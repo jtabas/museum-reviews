@@ -1,20 +1,20 @@
 source 'https://rubygems.org/'
 ruby '2.3.3'
-gem 'dotenv-rails'
 gem 'devise'
-gem 'http'
+gem 'dotenv-rails'
 gem 'foundation-rails'
+gem 'http'
 gem 'rails'
 gem 'rubocop', require: false
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+gem 'simple_form'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'json'
 gem 'rest-client'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'simple_form'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -24,6 +24,7 @@ end
 
 group :development, :test do
   gem 'capybara'
+  gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'launchy', require: false
   gem 'pry-rails'
@@ -31,7 +32,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
-  gem 'coveralls', require: false
 end
 
 group :production do
