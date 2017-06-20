@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :users  except: [:index, :new, :create]
   resources :museums do
     resources :reviews
   end
