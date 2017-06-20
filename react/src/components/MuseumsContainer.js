@@ -55,7 +55,6 @@ class MuseumsContainer extends Component {
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let rightBoundIndex = this.state.museums.length;
     let indexOfFirstMuseum = indexOfLastMuseum - this.state.museumsPerPage;
-
     let currentMuseums;
 
     if (indexOfFirstMuseum <= 0 ) {
