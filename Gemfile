@@ -7,13 +7,12 @@ gem 'dotenv-rails'
 gem 'rubocop', require: false
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0'
 gem 'http'
+gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
-gem 'uglifier', '>= 1.3.0'
 gem 'json'
 gem 'rest-client'
-gem 'yelp'
+gem 'uglifier', '>= 1.3.0'
 
 gem 'simple_form'
 group :development do
