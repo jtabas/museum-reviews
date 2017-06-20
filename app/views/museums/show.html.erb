@@ -22,7 +22,9 @@ Admission: <%= @museum.admission %><br>
 <% if user_signed_in? %>
   <%= render "reviews/review_form" %>
 <% else %>
-  <h4> Please sign in or create and account to leave your review. </h4>
-  <li><%= link_to "Create Account", new_user_registration_path%></li>
-  <li><%= link_to "Sign In", new_user_session_path%></li>
+  <ul>
+    <h4> Please sign in or create and account to leave your review. </h4>
+    <li><%= link_to "Create Account", new_user_registration_path%></li>
+    <li><%= link_to "Sign In", new_user_session_path%></li>
+  </ul>
 <% end %>
