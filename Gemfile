@@ -14,7 +14,6 @@ gem 'jquery-rails'
 gem 'json'
 gem 'rest-client'
 gem 'uglifier', '>= 1.3.0'
-gem 'simple_form'
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -26,6 +25,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'coveralls', require: false
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'launchy', require: false
   gem 'pry-rails'
@@ -33,7 +33,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
-  gem 'database_cleaner'
 end
 
 group :production do
