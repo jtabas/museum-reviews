@@ -6,7 +6,7 @@ feature 'user signs up' do
     click_link 'Create Account'
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Smith'
-    fill_in 'Email', with: 'John.Smith@gmail.com'
+    fill_in 'Email', with: 'Jerry.Sanchez@gmail.com'
     fill_in 'Username', with: 'AtTheRealJohnSmith'
     fill_in 'Password', with: 'Launch'
     fill_in 'Confirm Password', with: 'Launch'

@@ -1,8 +1,8 @@
 require 'rails_helper'
 feature 'User can edit a review' do
-  let!(:museum) { FactoryGirl.create(:museum) }
-  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
-  let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user) }
+  let!(:museum) { FactoryGirl.create(:museum, name: "The Curtain Rises") }
+  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user, email: 'SometimesTheresADraft@gmail.com') }
+  let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user, email: 'DoctorWho@gmail.com') }
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'User successfully edits a review' do
