@@ -1,6 +1,5 @@
 require 'dotenv-rails'
 require 'rest-client'
-require 'pry'
 
 Museum.destroy_all
 key = ENV['GOOGLE_API_KEY']
