@@ -62,4 +62,13 @@ ActiveRecord::Schema.define(version: 20170620133336) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.boolean "upvote", null: false
+    t.integer "review_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id", "user_id"], name: "index_votes_on_review_id_and_user_id", unique: true
+  end
+
 end
