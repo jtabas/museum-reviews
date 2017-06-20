@@ -5,5 +5,5 @@ class Museum < ApplicationRecord
   has_many :categories, through: :museum_categories
   validates :name, uniqueness: true
   validates :name, presence: true
-  validates :address, presence: true
+  validates :location, presence: true
 end
