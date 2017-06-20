@@ -51,33 +51,28 @@ class MuseumsContainer extends Component {
   }
 
   render() {
-    console.log("Render");
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let rightBoundIndex = this.state.museums.length;
     let indexOfFirstMuseum = indexOfLastMuseum - this.state.museumsPerPage;
     let currentMuseums;
 
     if (indexOfFirstMuseum <= 0 ) {
-      console.log("First Page");
       currentMuseums = this.state.museums.slice(0, 6);
     } else if (indexOfLastMuseum > this.state.museums.length) {
-      console.log("Last Page");
       indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
       currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex)
     } else {
-      console.log("Continuing Page");
       currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
     }
 
     let newMuseums = currentMuseums.map((museum, index) => {
-
       return (
         <Museum
           key={index}
           id={museum.id}
           name={museum.name}
         />
-      )
+      );
     });
     return (
       <div>
@@ -92,7 +87,7 @@ class MuseumsContainer extends Component {
           </button>
         </div>
       </div>
-    )
+    );
   }
 }
 

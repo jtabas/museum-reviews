@@ -64,7 +64,7 @@ CyclomaticComplexity:
 Delegate:
   Enabled: false
 
-DeprecatedHashMethods:
+Style/PreferredHashMethods:
   Enabled: false
 
 Documentation:
@@ -271,10 +271,10 @@ Style/Layout:
 Style/SymbolProc:
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 
 Style/UnneededPercentQ:
