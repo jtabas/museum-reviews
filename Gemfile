@@ -4,15 +4,15 @@ gem 'devise'
 gem 'dotenv-rails'
 gem 'foundation-rails'
 gem 'http'
-gem 'rails'
-gem 'rubocop', require: false
+gem 'json'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-gem 'simple_form'
-gem 'sass-rails', '~> 5.0'
-gem 'jquery-rails'
-gem 'json'
+gem 'rails'
 gem 'rest-client'
+gem 'rubocop', require: false
+gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
+gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
