@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.museum = @museum
     @review.user = current_user
     if @review.save
-      flash[:notice] = "Review added successfully"
+      flash[:notice] = 'Review added successfully'
       redirect_to museum_path(@museum)
     else
       flash[:notice] = @review.errors.full_messages.to_sentence

@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/db/schema
 
 /coverage
 /node_modules
@@ -19,4 +20,6 @@
 
 .byebug_history
 .env
-schema.rb
+/node_modules
+/app/assets/javascripts/bundle.js
+/react/coverage
