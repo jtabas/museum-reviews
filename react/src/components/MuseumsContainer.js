@@ -17,26 +17,26 @@ class MuseumsContainer extends Component {
   previousPage(event) {
     if (this.state.currentPage != 1) {
       let newPage = this.state.currentPage - 1;
-      this.setState({ currentPage: newPage })
+      this.setState({ currentPage: newPage });
     }
   }
 
   nextPage(event) {
     if (this.state.currentPage * this.state.museumsPerPage < this.state.museums.length) {
       let newPage = this.state.currentPage + 1;
-      this.setState({ currentPage: newPage })
+      this.setState({ currentPage: newPage });
     }
   }
 
-  getData() {
+  getData () {
     fetch('http://localhost:3000/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
           return response;
         } else {
-          let errorMessage = `${response.status} ($response.statusText)`,
-            error = new Error(errorMessage);
-          throw(error);
+          let errorMessage = `${response.status} ($response.statusText)`;
+          let error = new Error(errorMessage);
+          throw (error);
         }
       })
       .then(response => response.json())
@@ -46,7 +46,7 @@ class MuseumsContainer extends Component {
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
 
-  componentWillMount() {
+  componentWillMount () {
     this.getData();
   }
 
@@ -60,7 +60,7 @@ class MuseumsContainer extends Component {
       currentMuseums = this.state.museums.slice(0, 6);
     } else if (indexOfLastMuseum > this.state.museums.length) {
       indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
-      currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex)
+      currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex);
     } else {
       currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
     }
