@@ -21,4 +21,16 @@ Rails.application.routes.draw do
   resources :museums , only: [:index] do
     resources :reviews, except: [:index]
   end
+
+  namespace :admin do
+    resources :users
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :reviews, only: [] do
+        resources :votes, only: [:create]
+      end
+    end
+  end
 end
