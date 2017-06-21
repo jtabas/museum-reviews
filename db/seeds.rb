@@ -15,7 +15,7 @@ response['results'].each do |result|
 
   Museum.create!(
   name: museum['name'],
-  address: museum['formatted_address'],
+  location: museum['formatted_address'],
   hours: museum['opening_hours']['weekday_text'].join('\n'),
   website: museum['website'],
   phone_number: museum['formatted_phone_number'],
