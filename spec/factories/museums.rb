@@ -6,6 +6,5 @@ FactoryGirl.define do
     location '222 N 20th St'
     admission 20.0
     rating 3
-    
   end
 end

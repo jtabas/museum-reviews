@@ -50,6 +50,19 @@ class MuseumsContainer extends Component {
     this.getData();
   }
 
+  compare(a, b) {
+   const ratingA = a.rating;
+   const ratingB = b.rating;
+
+   let comparison = 0;
+   if (ratingA < ratingB) {
+     comparison = 1;
+   } else if (ratingA > ratingB) {
+     comparison = -1;
+   }
+   return comparison;
+  }
+
   render () {
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let rightBoundIndex = this.state.museums.length;
