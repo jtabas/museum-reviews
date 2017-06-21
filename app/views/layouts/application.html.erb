@@ -12,7 +12,17 @@
 
   <body>
     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "My Profile", user_path(current_user.id) %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Create Account", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </ul>
+
     <%= yield %>
   </body>
 

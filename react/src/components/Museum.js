@@ -12,7 +12,11 @@ class Museum extends Component {
           <h2>{this.props.name}</h2>
         </a>
       </div>
+<<<<<<< HEAD
     )
+=======
+    );
+>>>>>>> master
   }
 }
 
