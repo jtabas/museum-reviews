@@ -25,4 +25,4 @@ response['results'].each do |result|
   )
 end
 
-# user = User.create(first_name: 'John', last_name: 'Smith', email: 'John.Smith@gmail.com', password: 'Launch', state: 'Pennsylvania', city: 'Philadelphia', username: 'AtTheRealJohnSmith')
+user = User.create(first_name: 'David', last_name: 'MacMurtrie', email: 'dave.m@gmail.com', password: 'launch', state: 'Pennsylvania', city: 'Philadelphia', username: 'davedave', admin: true)

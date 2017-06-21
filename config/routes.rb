@@ -13,17 +13,13 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    resources :museums
-    resources :reviews
+    resources :reviews, only: [:destroy]
+    resources :users, only: [:index, :show]
   end
 
   resources :users, except: [:index, :new, :create]
   resources :museums, only: [:index, :show] do
     resources :reviews, except: [:index]
-  end
-
-  namespace :admin do
-    resources :users
   end
 
   namespace :api do
