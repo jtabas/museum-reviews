@@ -32,6 +32,7 @@ class ReviewsController < ApplicationController
     else
       render :edit
     end
+  end
 
   def destroy
     @review = Review.find(params[:id])

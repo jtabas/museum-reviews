@@ -16,6 +16,7 @@ class MuseumsContainer extends Component {
   }
 
   getData () {
+    let MuseumsContainer = this;
     fetch('/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
@@ -28,7 +29,7 @@ class MuseumsContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ allMuseums: body });
+        MuseumsContainer.setState({ allMuseums: body });
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
