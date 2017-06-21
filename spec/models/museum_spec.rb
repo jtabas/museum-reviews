@@ -6,6 +6,6 @@ RSpec.describe Museum, type: :model do
   it { should have_valid(:name).when("LOLOLloLLolol") }
   it { should_not have_valid(:name).when(nil, "") }
 
-  it { should have_valid(:address).when("LOLOLloLLolol") }
-  it { should_not have_valid(:address).when(nil, "") }
+  it { should have_valid(:location).when("LOLOLloLLolol") }
+  it { should_not have_valid(:location).when(nil, "") }
 end
