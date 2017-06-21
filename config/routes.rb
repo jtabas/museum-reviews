@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :users  except: [:index, :new, :create]
-  resources :museums do
-    resources :reviews
+  resources :users, except: [:index, :new, :create]
+  resources :museums , only: [:index] do
+    resources :reviews, except: [:index]
   end
 end
