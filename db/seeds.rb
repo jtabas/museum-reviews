@@ -2,6 +2,9 @@ require 'dotenv-rails'
 require 'rest-client'
 
 Museum.destroy_all
+Review.destroy_all
+User.destroy_all
+Vote.destroy_all
 key = ENV['GOOGLE_API_KEY']
 
 response = RestClient.get "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.9524,-75.1636&radius=15000&type=museum&key=#{key}",

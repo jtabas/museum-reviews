@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuseumsContainer from './components/MuseumsContainer';
+import MuseumsContainer from './containers/MuseumsContainer';
 
 $(function () {
   ReactDOM.render(
