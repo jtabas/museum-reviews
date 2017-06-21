@@ -15,14 +15,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :museums
     resources :reviews
+    resources :users
   end
 
   resources :museums do
     resources :reviews
-  end
-
-  namespace :admin do
-    resources :users
   end
 
   namespace :api do
