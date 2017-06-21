@@ -48,13 +48,14 @@ class MuseumsList extends Component {
     } else {
       currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
     }
+
     let newMuseums = currentMuseums.map((museum, index) => {
       return (
         <Museum
           key={index}
           id={museum.id}
           name={museum.name}
-          rating={Number((museum.rating).toFixed(2))}
+          rating={Number((museum.rating).toFixed(1))}
         />
       );
     });

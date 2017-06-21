@@ -41,7 +41,7 @@ class MuseumsContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ museums: body });
+        this.setState({ museums: body.sort(this.compare) });
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
