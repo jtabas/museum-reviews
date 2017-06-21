@@ -5,27 +5,11 @@ class MuseumsContainer extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      museums: [],
-      currentPage: 1,
-      museumsPerPage: 6
+      museums: []
     };
     this.getData = this.getData.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
-  }
-
-  previousPage (event) {
-    if (this.state.currentPage !== 1) {
-      let newPage = this.state.currentPage - 1;
-      this.setState({ currentPage: newPage });
-    }
-  }
-
-  nextPage (event) {
-    if (this.state.currentPage * this.state.museumsPerPage < this.state.museums.length) {
-      let newPage = this.state.currentPage + 1;
-      this.setState({ currentPage: newPage });
-    }
   }
 
   getData () {
@@ -34,9 +18,9 @@ class MuseumsContainer extends Component {
         if (response.ok) {
           return response;
         } else {
-          let errorMessage = `${response.status} ($response.statusText)`;
-          let error = new Error(errorMessage);
-          throw (error);
+          let errorMessage = `${response.status} ($response.statusText)`,
+            error = new Error(errorMessage);
+          throw(error);
         }
       })
       .then(response => response.json())
@@ -46,6 +30,7 @@ class MuseumsContainer extends Component {
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
 
+<<<<<<< HEAD
   componentWillMount () {
     this.getData();
   }
@@ -63,34 +48,14 @@ class MuseumsContainer extends Component {
     return comparison;
   }
 
-  render () {
-    let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
-    let rightBoundIndex = this.state.museums.length;
-    let indexOfFirstMuseum = indexOfLastMuseum - this.state.museumsPerPage;
-    let currentMuseums;
+  render() {
 
-    if (indexOfFirstMuseum <= 0) {
-      currentMuseums = this.state.museums.slice(0, 6);
-    } else if (indexOfLastMuseum > this.state.museums.length) {
-      indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
-      currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex);
-    } else {
-      currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
-    }
-
-    let newMuseums = currentMuseums.map((museum, index) => {
-      return (
-        <Museum
-          key={index}
-          id={museum.id}
-          name={museum.name}
-        />
-      );
-    });
     return (
       <div>
         <h1>Museums</h1>
-        {newMuseums}
+        <MuseumsList
+          museums={this.state.museums}
+          />
         <div className="text-center">
           <button className="hollow button numbers" onClick={this.previousPage}>
             Previous Page
