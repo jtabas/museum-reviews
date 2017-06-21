@@ -16,7 +16,7 @@ class MuseumsContainer extends Component {
     this.findMuseums = this.findMuseums.bind(this);
   }
 
-  compare(a, b) {
+  compare (a, b) {
     const ratingA = a.rating;
     const ratingB = b.rating;
 
@@ -30,7 +30,7 @@ class MuseumsContainer extends Component {
   }
 
   getData () {
-    let thiserino = this
+    let thiserino = this;
     fetch('/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
@@ -80,7 +80,7 @@ class MuseumsContainer extends Component {
       museumsToShow = this.findMuseums(this.state.searchTerm);
     }
 
-  return (
+    return (
       <div>
         <SearchBar
           onChange={this.onChange}
