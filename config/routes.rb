@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    resources :museums
-    resources :reviews
-    resources :users
+    resources :reviews, only: [:destroy]
+    resources :users, only: [:index, :show]
   end
 
+  resources :users, except: [:index, :new, :create]
   resources :museums do
     resources :reviews
   end
