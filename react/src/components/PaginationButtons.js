@@ -1,5 +1,5 @@
 import React from 'react'
-const SearchBar = props => {
+const PaginationButtons = props => {
   return (
     <div className="text-center">
        <button className="hollow button numbers" onClick={props.previousPage}>
@@ -12,4 +12,4 @@ const SearchBar = props => {
   )
 }
 
-export default SearchBar;
+export default PaginationButtons;
