@@ -1,0 +1,27 @@
+{
+  "extends": "standard",
+  "plugins": [
+      "standard",
+      "promise",
+      "react",
+  ],
+  "env": {
+    "browser": "true",
+    "node": "true",
+    "commonjs": "true",
+    "jasmine": "true",
+    "jquery": "true",
+    "es6": "true"
+  },
+  "parsers": "babel",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": "true"
+    },
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "semi": [2, "always"]
+  }
+}
