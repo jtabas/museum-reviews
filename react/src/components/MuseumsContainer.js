@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Museum from './Museum';
 
 class MuseumsContainer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       museums: [],
@@ -50,9 +50,9 @@ class MuseumsContainer extends Component {
     this.getData();
   }
 
-  compare(a, b) {
-   const ratingA = a.rating;
-   const ratingB = b.rating;
+  compare (firstMuseum, secondMuseum) {
+   const ratingA = firstMuseum.rating;
+   const ratingB = secondMuseum.rating;
 
    let comparison = 0;
    if (ratingA < ratingB) {
