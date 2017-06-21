@@ -15,7 +15,7 @@ class MuseumsContainer extends Component {
   }
 
   previousPage(event) {
-    if (this.state.currentPage != 1) {
+    if (this.state.currentPage !== 1) {
       let newPage = this.state.currentPage - 1;
       this.setState({ currentPage: newPage })
     }
