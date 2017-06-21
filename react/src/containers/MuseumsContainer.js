@@ -16,7 +16,21 @@ class MuseumsContainer extends Component {
     this.findMuseums = this.findMuseums.bind(this);
   }
 
+  compare(a, b) {
+    const ratingA = a.rating;
+    const ratingB = b.rating;
+
+    let comparison = 0;
+    if (ratingA < ratingB) {
+      comparison = 1;
+    } else if (ratingA > ratingB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
   getData () {
+    let thiserino = this
     fetch('/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
@@ -28,28 +42,15 @@ class MuseumsContainer extends Component {
         }
       })
       .then(response => response.json())
-      .then(body => {
-        this.setState({ allMuseums: body.sort(this.compare) });
+      .then(body => body.sort(thiserino.compare))
+      .then(sortedMuseums => {
+        thiserino.setState({ allMuseums: sortedMuseums });
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
 
   componentWillMount () {
     this.getData();
-  }
-
-  compare(a, b) {
-    // Use toUpperCase() to ignore character casing
-    const ratingA = a.rating;
-    const ratingB = b.rating;
-
-    let comparison = 0;
-    if (ratingA < ratingB) {
-      comparison = 1;
-    } else if (ratingA > ratingB) {
-      comparison = -1;
-    }
-    return comparison;
   }
 
   onChange (event) {
@@ -79,16 +80,14 @@ class MuseumsContainer extends Component {
       museumsToShow = this.findMuseums(this.state.searchTerm);
     }
 
-
-
-    return (
+  return (
       <div>
         <SearchBar
           onChange={this.onChange}
           handleClear={this.handleClear}
           value={this.state.searchTerm}
         />
-        <h1>Museums</h1>
+        <div className="large-12 large-centered columns"><h1>Museums</h1></div>
         <MuseumsList
           museums={museumsToShow}
         />
