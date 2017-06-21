@@ -11,14 +11,11 @@ gem 'rails'
 gem 'rest-client'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
-gem 'simple_form'
-<<<<<<< HEAD
-gem 'foundation-rails'
-=======
 gem 'jquery-rails'
+gem 'simple_form'
+gem 'foundation-rails'
 gem 'uglifier', '>= 1.3.0'
 
->>>>>>> master
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
