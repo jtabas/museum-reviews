@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 const SearchBar = props => {
   return (
     <div className="search-bar" >
@@ -11,7 +11,7 @@ const SearchBar = props => {
         onChange={props.onChange}
       />
     </div>
-  )
+  );
 }
 
 export default SearchBar;

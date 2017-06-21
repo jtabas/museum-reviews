@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 const PaginationButtons = props => {
   return (
     <div className="text-center">
@@ -9,7 +9,7 @@ const PaginationButtons = props => {
          Next Page
        </button>
     </div>
-  )
+  );
 }
 
 export default PaginationButtons;

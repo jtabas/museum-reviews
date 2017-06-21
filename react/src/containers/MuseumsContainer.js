@@ -3,7 +3,7 @@ import SearchBar from '../components/SearchBar';
 import MuseumsList from '../components/MuseumsList';
 
 class MuseumsContainer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       searchTerm: '',
@@ -42,23 +42,21 @@ class MuseumsContainer extends Component {
     this.setState({ searchTerm: newSearchTerm });
   }
 
-
   findMuseums (searchTerm) {
     let allMuseums = this.state.allMuseums;
     let foundMuseums = [];
     console.log(searchTerm);
     allMuseums.forEach((museum) => {
-        var museumMatch = false;
-        if (museum.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-          museumMatch = true;
-        }
-        if (museumMatch) { foundMuseums.push(museum); }
-      });
-      return foundMuseums;
+      var museumMatch = false;
+      if (museum.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        museumMatch = true;
+      }
+      if (museumMatch) { foundMuseums.push(museum); }
+    });
+    return foundMuseums;
   }
 
   render () {
-
     var museumsToShow = [];
     if (this.state.searchTerm === '') {
       museumsToShow = this.state.allMuseums;

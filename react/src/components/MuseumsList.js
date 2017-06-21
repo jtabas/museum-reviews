@@ -4,7 +4,7 @@ import PaginationButtons from './PaginationButtons';
 
 
 class MuseumsList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       museums: [],
