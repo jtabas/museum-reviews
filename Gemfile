@@ -13,7 +13,6 @@ gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'foundation-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
