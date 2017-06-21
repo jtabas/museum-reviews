@@ -29,7 +29,7 @@ class MuseumsContainer extends Component {
   }
 
   getData () {
-    fetch('http://localhost:3000/api/v1/museums.json')
+    fetch('/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
           return response;
