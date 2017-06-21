@@ -21,6 +21,7 @@ function vote(vote) {
   });
 
   request.done(function(data) {
+    debugger;
         console.log('here')
     document.getElementById("score_" + reviewId).innerHTML = "Score: " + data.score
   });
