@@ -1,9 +1,4 @@
 <h1><%= @museum.name %></h1>
-<<<<<<< HEAD
-
-<p>
-=======
->>>>>>> master
 Name: <%= @museum.name %><br>
 Description: <%= @museum.description %><br>
 Hours: <%= @museum.hours %><br>
@@ -11,25 +6,6 @@ Address: <%= @museum.location %><br>
 Admission: <%= @museum.admission %><br>
 </p>
 
-<<<<<<< HEAD
-
-
-
-<div class='review_form'>
-  <% if user_signed_in? %>
-    <%= render "layouts/new_review_form" %>
-<div>
-  <% else %>
-    <h4> Please sign in or create and account to leave your review. </h4>
-    <li><%= link_to "Create Account", new_user_registration_path%></li>
-    <li><%= link_to "Sign In", new_user_session_path%></li>
-  <% end %>
-
-  <div class='reviews'>
-    <h2>Reviews</h2>
-      <%= render partial: "layouts/review", collection: @reviews %>
-  </div>
-=======
 <h2>Reviews</h2>
 <% if @reviews %>
   <% @reviews.each do |review| %>
@@ -53,4 +29,3 @@ Admission: <%= @museum.admission %><br>
     <li><%= link_to "Sign In", new_user_session_path%></li>
   </ul>
 <% end %>
->>>>>>> master

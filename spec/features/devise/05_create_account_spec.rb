@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'user signs up' do
   scenario 'specifying valid and require information' do
     visit museums_path
+    save_and_open_page
     click_link 'Create Account'
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Smith'
