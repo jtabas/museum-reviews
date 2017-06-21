@@ -64,7 +64,7 @@ class MuseumsList extends Component {
       buttons = <PaginationButtons
       previousPage={this.previousPage}
       nextPage={this.nextPage}
-      />
+      />;
     }
 
     return (
