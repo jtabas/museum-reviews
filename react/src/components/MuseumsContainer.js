@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import Museum from './Museum';
-import PaginationButtons from './PaginationButtons';
 
-
-class MuseumsList extends Component {
-  constructor (props) {
+class MuseumsContainer extends Component {
+  constructor(props) {
     super(props);
     this.state = {
       museums: [],
       currentPage: 1,
       museumsPerPage: 6
     };
-
+    this.getData = this.getData.bind(this);
     this.previousPage = this.previousPage.bind(this);
     this.nextPage = this.nextPage.bind(this);
-  }
-
-  componentWillReceiveProps (nextProps) {
-    this.setState({ museums: nextProps.museums });
   }
 
   previousPage (event) {
@@ -34,6 +28,28 @@ class MuseumsList extends Component {
     }
   }
 
+  getData () {
+    fetch('/api/v1/museums.json')
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} ($response.statusText)`;
+          let error = new Error(errorMessage);
+          throw (error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        this.setState({ museums: body });
+      })
+      .catch(error => console.error(`Error in fetch ${error.message}`));
+  }
+
+  componentWillMount () {
+    this.getData();
+  }
+
   render () {
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let rightBoundIndex = this.state.museums.length;
@@ -48,32 +64,31 @@ class MuseumsList extends Component {
     } else {
       currentMuseums = this.state.museums.slice(indexOfFirstMuseum, indexOfLastMuseum);
     }
+
     let newMuseums = currentMuseums.map((museum, index) => {
       return (
         <Museum
           key={index}
           id={museum.id}
           name={museum.name}
-          rating={Number((museum.rating).toFixed(2))}
         />
       );
     });
-
-    let buttons = null;
-    if (this.state.museums.length > this.state.museumsPerPage) {
-      buttons = <PaginationButtons
-      previousPage={this.previousPage}
-      nextPage={this.nextPage}
-      />;
-    }
-
     return (
       <div>
+        <h1>Museums</h1>
         {newMuseums}
-        {buttons}
+        <div className="text-center">
+          <button className="hollow button numbers" onClick={this.previousPage}>
+            Previous Page
+          </button>
+          <button className="hollow button numbers" onClick={this.nextPage}>
+            Next Page
+          </button>
+        </div>
       </div>
     );
   }
 }
 
-export default MuseumsList;
+export default MuseumsContainer;

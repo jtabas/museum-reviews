@@ -10,13 +10,14 @@ class MuseumsContainer extends Component {
       allMuseums: []
     };
 
+    this.compare = this.compare.bind(this);
     this.getData = this.getData.bind(this);
     this.onChange = this.onChange.bind(this);
     this.findMuseums = this.findMuseums.bind(this);
   }
 
   getData () {
-    fetch('https://localhost:3000/api/v1/museums.json')
+    fetch('/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
           return response;
@@ -28,13 +29,27 @@ class MuseumsContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ allMuseums: body });
+        this.setState({ allMuseums: body.sort(this.compare) });
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
 
   componentWillMount () {
     this.getData();
+  }
+
+  compare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const ratingA = a.rating;
+    const ratingB = b.rating;
+
+    let comparison = 0;
+    if (ratingA < ratingB) {
+      comparison = 1;
+    } else if (ratingA > ratingB) {
+      comparison = -1;
+    }
+    return comparison;
   }
 
   onChange (event) {
@@ -63,6 +78,8 @@ class MuseumsContainer extends Component {
     } else {
       museumsToShow = this.findMuseums(this.state.searchTerm);
     }
+
+
 
     return (
       <div>
