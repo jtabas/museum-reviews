@@ -51,16 +51,16 @@ class MuseumsContainer extends Component {
   }
 
   compare (firstMuseum, secondMuseum) {
-   const ratingA = firstMuseum.rating;
-   const ratingB = secondMuseum.rating;
+    const ratingA = firstMuseum.rating;
+    const ratingB = secondMuseum.rating;
 
-   let comparison = 0;
-   if (ratingA < ratingB) {
-     comparison = 1;
-   } else if (ratingA > ratingB) {
-     comparison = -1;
-   }
-   return comparison;
+    let comparison = 0;
+    if (ratingA < ratingB) {
+      comparison = 1;
+    } else if (ratingA > ratingB) {
+      comparison = -1;
+    }
+    return comparison;
   }
 
   render () {
