@@ -57,8 +57,13 @@ ActiveRecord::Schema.define(version: 20170621144840) do
     t.string "username", default: "", null: false
     t.string "city", default: "", null: false
     t.string "state", default: "", null: false
+<<<<<<< HEAD
     t.string "avatar"
     t.boolean "admin", default: false, null: false
+=======
+    t.string "admin"
+    t.string "avatar"
+>>>>>>> cd54557ebd94a2ace10d7917424d49d941d88a06
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
