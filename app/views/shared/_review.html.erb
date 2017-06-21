@@ -3,7 +3,7 @@
   <p><%= review.body %></p>
 <% end %>
   <ul>
-    <li>
+    <li id="score_<%= review.id %>">
       <%= review.rating %>
       <button id="<%= review.id%>" class="upvote">Upvote</button>
       <button id="<%= review.id%>" class="downvote">Downvote</button>
