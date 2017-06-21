@@ -4,3 +4,8 @@
 <p>From: <%= @user.city %>, <%= @user.state %></p>
 <%= link_to 'Edit my Profile', edit_user_path(@user) %>
 <%= link_to 'Delete my Account', user_path(@user), method: :delete %>
+
+<% if @user.admin %>
+<h3>Admin Features<h3>
+<%= link_to 'See All Users', admin_users_path %>
+<% end %>

@@ -19,8 +19,26 @@ feature 'Admin access admin functions' do
     visit user_path(admin)
     click_link 'See All Users'
 
-    expect(page).to have user1.first_name
-    expect(page).to have user2.first_name
-    expect(page).to have user3.first_name
+    expect(page).to have_content(user1.first_name)
+    expect(page).to have_link(user1.username)
+    expect(page).to have_content(user2.first_name)
+    expect(page).to have_link(user2.username)
+    expect(page).to have_content(user3.first_name)
+    expect(page).to have_link(user3.username)
+  end
+
+  scenario 'Non-admin does not see users link' do
+    sign_in_as(user1)
+    visit user_path(user1)
+    expect(page).to_not have_content 'Admin Features'
+    expect(page).to_not have_link 'See All Users'
+  end
+
+  scenario 'Non-admin cannot access admin functions' do
+    sign_in_as(user1)
+    visit user_path(admin)
+    click_link 'See All Users'
+
+    expect(page).to have_content("You don't have access to this page!")
   end
 end
