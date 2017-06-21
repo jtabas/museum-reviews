@@ -12,7 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/db/schema
+/db/schema.rb
 
 /coverage
 /node_modules
@@ -23,3 +23,4 @@
 /node_modules
 /app/assets/javascripts/bundle.js
 /react/coverage
+**/.DS_Store
