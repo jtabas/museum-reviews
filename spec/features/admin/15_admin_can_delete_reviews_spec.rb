@@ -7,7 +7,6 @@ feature 'Admin access admin functions' do
   let!(:museum) { FactoryGirl.create(:museum) }
   let!(:review) { FactoryGirl.create(:review, museum: museum, user: user1) }
 
-
   scenario 'Admin sees link to delete review' do
     sign_in_as(admin)
     visit museum_path(museum)

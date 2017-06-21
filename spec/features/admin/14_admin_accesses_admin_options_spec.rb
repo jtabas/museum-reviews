@@ -6,7 +6,6 @@ feature 'Admin access admin functions' do
   let!(:user2) { FactoryGirl.create(:user, email: 'this_is@my.email') }
   let!(:user3) { FactoryGirl.create(:user, email: 'email.email@email.email') }
 
-
   scenario 'Admin sees users link' do
     sign_in_as(admin)
     visit user_path(admin)

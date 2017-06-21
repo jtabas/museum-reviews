@@ -1,7 +1,6 @@
 module Admin
   class ReviewsController < ApplicationController
     def destroy
-      binding.pry
       @review = Review.find(params[:id])
       if current_user.admin
         @review.destroy
