@@ -16,12 +16,13 @@ response['results'].each do |result|
   places = JSON.parse(places)
   museum = places['result']
   Museum.create!(
-  name: museum['name'],
-  location: museum['formatted_address'],
-  hours: museum['opening_hours']['weekday_text'],
-  website: museum['website'],
-  phone_number: museum['formatted_phone_number'],
-  rating: result['rating']
+    name: museum['name'],
+    location: museum['formatted_address'],
+    hours: museum['opening_hours']['weekday_text'].join('\n'),
+    website: museum['website'],
+    phone_number: museum['formatted_phone_number'],
+    rating: result['rating'],
+    photo: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{museum["photos"].first["photo_reference"]}&key=#{ENV['GOOGLE_API_KEY']}"
   )
 end
 
