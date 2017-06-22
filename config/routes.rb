@@ -19,13 +19,15 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :new, :create]
   resources :museums, only: [:index, :show] do
-    resources :reviews, except: [:index, :new]
+    resources :reviews, except: [:index, :show, :new]
   end
 
   namespace :api do
     namespace :v1 do
-      resources :reviews, only: [] do
-        resources :votes, only: [:create]
+      resources :museums, only: [] do
+        resources :reviews, only: [] do
+          resources :votes, only: [:create]
+        end
       end
     end
   end

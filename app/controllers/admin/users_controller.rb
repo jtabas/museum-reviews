@@ -8,11 +8,5 @@ module Admin
         flash[:notice] = "You don't have access to this page!"
       end
     end
-
-    private
-
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :username, :city, :state, :admin)
-    end
   end
 end

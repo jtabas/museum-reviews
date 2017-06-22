@@ -35,6 +35,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
+  config.include Requests::JsonHelpers, type: :request
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file address, for example enabling you to call `get` and
@@ -58,6 +59,9 @@ end
 require 'capybara/rails'
 require "valid_attribute"
 require "database_cleaner"
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+end
 
 RSpec.configure do |config|
   config.before(:suite) do
@@ -83,7 +87,4 @@ RSpec.configure do |config|
   config.before(:each) do
     ActionMailer::Base.deliveries.clear
   end
-end
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
 end

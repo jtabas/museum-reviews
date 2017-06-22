@@ -6,9 +6,9 @@ feature 'Museums Show' do
   scenario 'User visits Museum show page directly' do
     visit museum_path(museum)
     expect(page).to have_content museum.name
-    expect(page).to have_content museum.description
-    expect(page).to have_content museum.hours
+    expect(page).to have_content JSON.parse(museum.hours)[0]
     expect(page).to have_content museum.location
-    expect(page).to have_content museum.admission
+    expect(page).to have_content museum.phone_number
+    expect(page).to have_content museum.website
   end
 end
