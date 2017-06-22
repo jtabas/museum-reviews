@@ -10,12 +10,27 @@ class MuseumsContainer extends Component {
       allMuseums: []
     };
 
+    this.compare = this.compare.bind(this);
     this.getData = this.getData.bind(this);
     this.onChange = this.onChange.bind(this);
     this.findMuseums = this.findMuseums.bind(this);
   }
 
+  compare (a, b) {
+    const ratingA = a.rating;
+    const ratingB = b.rating;
+
+    let comparison = 0;
+    if (ratingA < ratingB) {
+      comparison = 1;
+    } else if (ratingA > ratingB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
   getData () {
+    let MuseumContainer = this;
     fetch('/api/v1/museums.json')
       .then(response => {
         if (response.ok) {
@@ -27,8 +42,9 @@ class MuseumsContainer extends Component {
         }
       })
       .then(response => response.json())
-      .then(body => {
-        this.setState({ allMuseums: body });
+      .then(body => body.sort(MuseumContainer.compare))
+      .then(sortedMuseums => {
+        MuseumContainer.setState({ allMuseums: sortedMuseums });
       })
       .catch(error => console.error(`Error in fetch ${error.message}`));
   }
@@ -71,7 +87,7 @@ class MuseumsContainer extends Component {
           handleClear={this.handleClear}
           value={this.state.searchTerm}
         />
-        <h1>Museums</h1>
+        <div className="large-12 large-centered columns"><h1>Museums</h1></div>
         <MuseumsList
           museums={museumsToShow}
         />
