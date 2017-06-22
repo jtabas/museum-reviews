@@ -1,9 +1,4 @@
 class ReviewsController < ApplicationController
-  def new
-    @review = Review.new
-    @museum = Museum.find(params[:museum_id])
-  end
-
   def create
     @museum = Museum.find(params[:museum_id])
     @review = Review.new(review_params)
