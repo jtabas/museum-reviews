@@ -56,6 +56,8 @@ class MuseumsList extends Component {
           id={museum.id}
           name={museum.name}
           rating={Number((museum.rating).toFixed(1))}
+          address={museum.location.split(',')[0]}
+          photo={museum.photo}
         />
       );
     });
