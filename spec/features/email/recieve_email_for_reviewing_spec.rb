@@ -10,7 +10,7 @@ feature 'User recieves an email' do
 
     fill_in "Rating", with: "1"
     fill_in "Body", with: "Total garbage."
-    click_button "Submit Review"
+    click_button "Create Review"
 
     expect(page).to have_content("Total garbage.")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
