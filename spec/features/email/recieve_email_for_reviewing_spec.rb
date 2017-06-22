@@ -9,7 +9,6 @@ feature 'User recieves an email' do
     visit museum_path(museum)
 
     fill_in "Rating", with: "1"
-    fill_in "Body", with: "Total garbage."
     click_button "Create Review"
 
     expect(page).to have_content("Total garbage.")
