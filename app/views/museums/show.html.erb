@@ -1,6 +1,6 @@
 <h1><%= @museum.name %></h1>
 Hours:
-<% JSON.parse(@museum.hours).each do |day| %>
+<% @hours.each do |day| %>
 <li><%= day %></li>
 <% end %>
 <br>
