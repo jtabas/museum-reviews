@@ -11,7 +11,7 @@ feature 'User can edit their own review' do
     click_link('Edit This Review', match: :first)
 
     fill_in 'Rating', with: 4
-    fill_in 'Body', with: "Actually it\'s better because now they have dinosaurs."
+    fill_in 'Your Review', with: "Actually it\'s better because now they have dinosaurs."
     click_button 'Update Review'
     expect(page).to have_content('Rating: 3')
     expect(page).to have_content("Actually it\'s better because now they have dinosaurs.")
@@ -24,7 +24,7 @@ feature 'User can edit their own review' do
     click_link('Edit This Review', match: :first)
 
     fill_in 'Rating', with: ''
-    fill_in 'Body', with: ''
+    fill_in 'Your Review', with: ''
     click_button 'Update Review'
     expect(page).to_not have_content('Rating: 3')
     expect(page).to_not have_content(review.body)

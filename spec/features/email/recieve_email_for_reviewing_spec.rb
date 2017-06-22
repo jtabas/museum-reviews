@@ -9,7 +9,7 @@ feature 'User recieves an email' do
     visit museum_path(museum)
 
     fill_in "Rating", with: "1"
-    fill_in "Body", with: "God, some people..."
+    fill_in "Your Review", with: "God, some people..."
     click_button "Create Review"
 
     expect(page).to have_content("God, some people...")

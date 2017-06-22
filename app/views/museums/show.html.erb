@@ -1,11 +1,13 @@
 <h1><%= @museum.name %></h1>
+Hours:
+<% JSON.parse(@museum.hours).each do |day| %>
+<li><%= day %></li>
+<% end %>
+<br>
 <h3>Rating: <%= @rating %></h3>
-Name: <%= @museum.name %><br>
-Description: <%= @museum.description %><br>
-Hours: <%= @museum.hours %><br>
 Address: <%= @museum.location %><br>
-Admission: <%= @museum.admission %><br>
-Rating: <%= @museum.rating %></h4>
+Website: <%= @museum.website %><br>
+Phone: <%= @museum.phone_number %><br>
 </p>
 
 <h2>Reviews</h2>
@@ -30,11 +32,12 @@ Rating: <%= @museum.rating %></h4>
     <% end %>
   <% end %>
 <% end %>
-<% if user_signed_in? %>
+
+<% if user_signed_in? && !current_user.reviews.include?(Review.find_by(museum_id: @museum.id))%>
   <%= render "reviews/review_form" %>
 <% else %>
   <ul>
-    <h4> Please sign in or create and account to leave your review. </h4>
+    <h4> Please sign in or create an account to leave your review. </h4>
     <li><%= link_to "Create Account", new_user_registration_path%></li>
     <li><%= link_to "Sign In", new_user_session_path%></li>
   </ul>
