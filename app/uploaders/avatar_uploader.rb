@@ -4,16 +4,16 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.test? || Rails.env.development?
+  # if Rails.env.test? || Rails.env.development?
     storage :file
     def store_dir
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    end
-  else
-    def filename
-      "image#{file.original_filename}.jpg"
-    end
-    storage :fog
+  #   end
+  # else
+  #   def filename
+  #     "image#{file.original_filename}.jpg"
+  #   end
+  #   storage :fog
   end
 
   # version :thumb do
