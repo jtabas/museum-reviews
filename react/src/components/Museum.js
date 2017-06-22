@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-
-class Museum extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <div>
-        <a href={`/museums/${this.props.id}`}>
-          <h2>{this.props.name}</h2>
+import React from 'react';
+const Museum = props => {
+  return (
+    <div className="museum-info-box">
+    <img src={props.photo} alt={props.name} className="museum-index-img" />
+        <a href={`/museums/${props.id}`}>
+          <h2>{props.name}</h2>
         </a>
-        <p>Rating: {this.props.rating} </p>
-      </div>
-    );
-  }
+        <p>Rating: {props.rating} <br />
+        Address: {props.address} </p>
+    </div>
+  );
 }
 
 export default Museum;

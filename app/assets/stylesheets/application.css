@@ -14,3 +14,22 @@ h1{
 .field small-3 columns{
   font-size: 40px;
 }
+
+.museum-index-img {
+  width: 120px;
+  height: 120px;
+  margin: 0px 20px;
+  float: left;
+}
+
+.museum-info-box {
+  border: 1px solid black;
+  clear: both;
+  overflow: auto;
+  padding: 15px 0px;
+  margin: 30px 0px;
+}
+
+#app{
+  margin: 15px 15%;
+}
