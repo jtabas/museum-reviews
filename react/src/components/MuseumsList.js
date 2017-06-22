@@ -34,28 +34,6 @@ class MuseumsList extends Component {
     }
   }
 
-  getData () {
-    fetch('/api/v1/museums.json')
-      .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} ($response.statusText)`;
-          let error = new Error(errorMessage);
-          throw (error);
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({ museums: body });
-      })
-      .catch(error => console.error(`Error in fetch ${error.message}`));
-  }
-
-  componentWillMount () {
-    this.getData();
-  }
-
   render () {
     let indexOfLastMuseum = this.state.currentPage * this.state.museumsPerPage;
     let rightBoundIndex = this.state.museums.length;
@@ -77,6 +55,7 @@ class MuseumsList extends Component {
           key={index}
           id={museum.id}
           name={museum.name}
+          rating={Number((museum.rating).toFixed(1))}
         />
       );
     });

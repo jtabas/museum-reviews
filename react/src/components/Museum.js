@@ -11,6 +11,7 @@ class Museum extends Component {
         <a href={`/museums/${this.props.id}`}>
           <h2>{this.props.name}</h2>
         </a>
+        <p>Rating: {this.props.rating} </p>
       </div>
     );
   }
