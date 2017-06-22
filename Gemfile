@@ -12,6 +12,7 @@ gem 'rest-client'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+gem 'sendgrid-ruby'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 
