@@ -8,7 +8,15 @@ class ReviewsController < ApplicationController
     @museum = Museum.find(params[:museum_id])
     @review = Review.new(review_params)
     @review.museum = @museum
+
     @review.user = current_user
+    @new_museum_rating = @review.rating.to_f + @museum.rating.to_f
+    @museum.reviews.each { |review| @new_museum_rating += review.rating }
+    @total_reviews = @museum.reviews.size.to_f + 2
+    @new_museum_rating /= @total_reviews
+
+    @museum.update_attribute(:rating, @new_museum_rating)
+
     if @review.save
       flash[:notice] = 'Review added successfully'
       redirect_to museum_path(@museum)

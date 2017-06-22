@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class ="row">
   <h1><%= @museum.name %></h1>
 </div>
@@ -14,6 +15,13 @@
 
 <!-- Name: <%= @museum.name %><br> -->
 <!-- Description: <%= @museum.description %><br> -->
+=======
+<h1><%= @museum.name %></h1>
+<h3>Rating: <%= @rating %></h3>
+Name: <%= @museum.name %><br>
+Description: <%= @museum.description %><br>
+Hours: <%= @museum.hours %><br>
+>>>>>>> master
 Address: <%= @museum.location %><br>
 <!-- Admission: <%= @museum.admission %><br> -->
 
@@ -28,7 +36,11 @@ Address: <%= @museum.location %><br>
 
     <% if user_signed_in? && review.user == current_user%>
     <%= link_to 'Edit This Review', edit_museum_review_path(review.museum, review) %>
-    <%= link_to 'Delete This Review', museum_review_path(review), method: :delete %>
+    <%= link_to 'Delete This Review', museum_review_path(review.museum, review), method: :delete %>
+    <% end %>
+
+    <% if user_signed_in? && current_user.admin %>
+    <%= link_to 'Delete as Admin', admin_review_path(review), method: :delete %>
     <% end %>
   <% end %>
 <% end %>
