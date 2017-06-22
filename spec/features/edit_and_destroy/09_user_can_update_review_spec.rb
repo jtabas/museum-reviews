@@ -13,7 +13,6 @@ xfeature 'User can edit their own review' do
     fill_in 'Rating', with: 4
     fill_in 'Your Review', with: "Actually it\'s better because now they have dinosaurs."
     click_button 'Update Review'
-    save_and_open_page
 
     expect(page).to have_content('Rating: 4')
     expect(page).to have_content("Actually it\'s better because now they have dinosaurs.")
