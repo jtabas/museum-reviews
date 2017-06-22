@@ -11,8 +11,8 @@ function vote(vote) {
   event.preventDefault();
   museumId = this.window.location.pathname.split('/')[2]
   reviewId = this.document.activeElement.attributes.id.value
-  console.log(reviewId)
-  console.log(museumId)
+  console.log("Review id: " + reviewId)
+  console.log("Museum id: " + museumId)
 
   var request = $.ajax({
     method: "POST",
@@ -21,8 +21,6 @@ function vote(vote) {
   });
 
   request.done(function(data) {
-    debugger;
-        console.log('here')
     document.getElementById("score_" + reviewId).innerHTML = "Score: " + data.score
   });
 }

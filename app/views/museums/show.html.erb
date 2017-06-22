@@ -4,21 +4,19 @@ Description: <%= @museum.description %><br>
 Hours: <%= @museum.hours %><br>
 Address: <%= @museum.location %><br>
 Admission: <%= @museum.admission %><br>
+Rating: <%= @museum.rating %></h4>
 </p>
 
 <h2>Reviews</h2>
 <% if @reviews %>
   <% @reviews.each do |review| %>
-    <h4>Rating: <%= review.rating %></h4>
-    <ul>
-      <li id="score_<%= review.id %>">
-        <%= review.rating %>
-        <button id="<%= review.id%>" class="upvote">Upvote</button>
-        <button id="<%= review.id%>" class="downvote">Downvote</button>
-      </li>
-    </ul>
+    <p id="score_<%= review.id %>">
+      Score: <%= review.score %>
+    </p>
+    <button id="<%= review.id%>" class="upvote">Upvote</button>
+    <button id="<%= review.id%>" class="downvote">Downvote</button>
     <% if review.body %>
-      <p><%= review.body %></p>
+      <p>Body: <%= review.body %></p>
     <% end %>
 
     <% if user_signed_in? && review.user == current_user%>
