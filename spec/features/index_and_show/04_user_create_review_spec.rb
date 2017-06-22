@@ -2,19 +2,17 @@ require 'rails_helper'
 feature 'Museum\'s Reviews Create' do
   let!(:user) { FactoryGirl.create(:user, email: 'firefly@aol.com') }
   let!(:museum) { FactoryGirl.create(:museum, name: "Please") }
-  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
 
   scenario 'User creates a review' do
     sign_in_as(user)
     visit museum_path(museum)
-
     fill_in 'Rating', with: 5
     fill_in 'Your Review', with: 'Awesome Museum!!!...JK'
 
     click_button 'Create Review'
 
-    expect(page).to have_content(review.rating)
-    expect(page).to have_content(review.body)
+    expect(page).to have_content(5)
+    expect(page).to have_content('Awesome Museum!!!...JK')
 
   end
 

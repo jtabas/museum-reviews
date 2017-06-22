@@ -9,6 +9,7 @@ feature 'User can edit a review' do
     sign_in_as(user)
     visit museum_path(museum)
     click_link('Edit This Review', match: :first)
+
     expect(page).to have_field('Rating', with: 3)
     expect(page).to have_content(review.body)
     expect(page).to have_button('Update Review')
