@@ -25,4 +25,12 @@ feature 'Only authorized user can destroy a review' do
 
     expect(page).to have_no_link('Delete This Review')
   end
+
+  scenario 'User destroys review' do
+    sign_in_as(user)
+    visit museum_path(museum)
+    click_link 'Delete This Review'
+
+    expect(Review.all).to be_empty
+  end
 end
