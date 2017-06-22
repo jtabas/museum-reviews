@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/db/schema.rb
 
 /coverage
 /node_modules
