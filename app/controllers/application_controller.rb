@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
        :state,
        :email,
        :avatar
-       ]
-     )
-   )
+          ]
+        )
+      )
  end
 end
