@@ -5,8 +5,7 @@ feature 'user update a musem\'s rating' do
   let!(:user2) { FactoryGirl.create(:user, email: 'email@email.com') }
   let!(:review) { FactoryGirl.create(:review, museum: museum, user: user1) }
 
-
-  scenario 'User can get to the edit feature' do
+  scenario 'User posts a new review which changes the rating' do
     sign_in_as(user2)
     visit museum_path(museum)
     fill_in 'Rating', with: 4
