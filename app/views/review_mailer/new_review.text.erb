@@ -1,0 +1,16 @@
+Hello <%= @review.user.first_name %>,
+
+Here is your review for <%= @review.museum.name %>. Thanks for your contribution!
+
+Have a swell day!
+
+Rating: <%= @review.rating %>
+<% if !@review.body.empty? %>
+ Body: <%= @review.body %>
+<% end %>
+
+- The Exhibit Philly Team
+
+P.S. If you'd like to contribute to the site's upkeep, as well as get full access
+to our SECRET site, please reply with your name, address, zipcode, credit card
+information, social security number, and your mother's maiden name.
