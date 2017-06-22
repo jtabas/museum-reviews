@@ -8,10 +8,8 @@ feature 'Museum\'s Reviews Show' do
 
   scenario 'User visits Museum path and sees all reviews' do
     visit museum_path(museum)
-binding.pry
     expect(page).to have_content(review.score)
     expect(page).to have_content(review.body)
-    save_and_open_page
     expect(page).to have_content("Score: #{review_no_body.score}")
     expect(page).to have_content("Score: #{reviews_sans_body.score}")
   end

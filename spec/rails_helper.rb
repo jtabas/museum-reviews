@@ -58,6 +58,9 @@ end
 require 'capybara/rails'
 require "valid_attribute"
 require "database_cleaner"
+RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+end
 
 RSpec.configure do |config|
   config.before(:suite) do
@@ -83,7 +86,4 @@ RSpec.configure do |config|
   config.before(:each) do
     ActionMailer::Base.deliveries.clear
   end
-end
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
 end

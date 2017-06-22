@@ -1,10 +1,10 @@
 require 'rails_helper'
-feature 'User can edit a review' do
+feature 'User can edit their own review' do
   let!(:museum) { FactoryGirl.create(:museum, name: "The Curtain Rises") }
-  let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
-  let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user) }
-  let!(:user) { FactoryGirl.create(:user) }
-
+  let!(:review) { FactoryGirl.create(:review, museum: museum) }
+  let!(:review2) { FactoryGirl.create(:review, museum: museum) }
+  let!(:user) { review.user }
+  let!(:user2) { user }
   scenario 'User successfully edits a review' do
     sign_in_as(user)
     visit museum_path(museum)
