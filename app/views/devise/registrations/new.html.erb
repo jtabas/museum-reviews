@@ -53,7 +53,7 @@
     </div>
 
     <div class="field small-3 columns">
-      <%= f.label :city, "Home City" %>
+      <%= f.label :city, "City" %>
     </div>
     <div class="field small-8 columns">
       <%= f.text_field :city, autofocus: true %>
@@ -65,7 +65,16 @@
     <div class="field small-8 columns">
       <%= f.text_field :state, autofocus: true %>
     </div>
-    <br>
+
+    <div class="field small-8 columns">
+    <%= f.label :avatar %>
+  </div>
+    <div class="field small-8 columns">
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Account" %>
   </div>
 
     <div class="actions">

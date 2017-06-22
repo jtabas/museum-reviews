@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
 ruby '2.3.3'
+gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
 gem 'foundation-rails'
@@ -12,6 +13,7 @@ gem 'rest-client'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+gem 'sendgrid-ruby'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 

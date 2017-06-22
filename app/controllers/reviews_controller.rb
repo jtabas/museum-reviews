@@ -1,9 +1,4 @@
 class ReviewsController < ApplicationController
-  def new
-    @review = Review.new
-    @museum = Museum.find(params[:museum_id])
-  end
-
   def create
     @museum = Museum.find(params[:museum_id])
     @review = Review.new(review_params)
@@ -18,6 +13,7 @@ class ReviewsController < ApplicationController
     @museum.update_attribute(:rating, @new_museum_rating)
 
     if @review.save
+      ReviewMailer.new_review(@review).deliver_now
       flash[:notice] = 'Review added successfully'
       redirect_to museum_path(@museum)
     else
@@ -38,6 +34,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review Successfully Updated"
       redirect_to museum_path(@museum)
     else
+      flash[:notice] = @review.errors.full_messages.to_sentence
       render :edit
     end
   end

@@ -13,7 +13,8 @@ class UsersController < ApplicationController
       flash[:notice] = "Profile Updated Successfully"
       redirect_to user_path(@user)
     else
-      render :edit
+      redirect_to edit_user_path(@user)
+      flash[:notice] = "Please enter correct passord to save changes"
     end
   end
 
@@ -26,6 +27,16 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :username, :city, :state, :admin)
+    params.require(:user).permit(
+      :first_name,
+      :last_name,
+      :email,
+      :password,
+      :username,
+      :city,
+      :state,
+      :admin,
+      :avatar
+    )
   end
 end
