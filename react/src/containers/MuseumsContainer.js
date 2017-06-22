@@ -82,12 +82,12 @@ class MuseumsContainer extends Component {
 
     return (
       <div>
+      <div className="large-12 large-centered columns"><h1>Exhibit Philly</h1></div>
         <SearchBar
           onChange={this.onChange}
           handleClear={this.handleClear}
           value={this.state.searchTerm}
         />
-        <div className="large-12 large-centered columns"><h1>Museums</h1></div>
         <MuseumsList
           museums={museumsToShow}
         />

@@ -13,6 +13,7 @@ xfeature 'Museum\'s Reviews Create' do
 
     expect(page).to have_content(5)
     expect(page).to have_content('Awesome Museum!!!...JK')
+
   end
 
   scenario 'User tries to create a review with empty fields' do
@@ -26,4 +27,5 @@ xfeature 'Museum\'s Reviews Create' do
     expect(page).to have_content('Rating is not a number')
     expect(page).to have_content('Rating is not a valid numeric rating (Must be between 1-5)')
   end
+
 end

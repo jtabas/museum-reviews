@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'Museum\'s Reviews Show' do
+xfeature 'Museum\'s Reviews Show' do
   let!(:user) { FactoryGirl.create(:user, email: "Something@gmail.com") }
   let!(:museum) { FactoryGirl.create(:museum, name: "Ugh") }
   let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }

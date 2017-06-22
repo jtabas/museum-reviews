@@ -1,18 +1,81 @@
-.top-right-bar{
+@import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
+
+.top-bar{
+  background: #173D45;
+
+}
+.top-bar-right{
   float: right;
 }
 
 .row{
   text-align: center;
-  width: 45%;
 }
 
 h1{
   font-weight: bold;
+  font-family: cursive;
 }
 
-.field small-3 columns{
-  font-size: 40px;
+h2{
+  font-family: sans-serif;
+}
+
+.top-bar-left{
+  float: left;
+}
+
+.notice{
+  margin: 0 20px;
+}
+
+body {
+  background-color: #E8D9BA;
+}
+
+.menu-text{
+  background-color: #173D45;
+}
+
+#top-bar-right{
+  background-color: #173D45;
+}
+
+.menu{
+    background-color: #173D45;
+}
+
+#login{
+  text-align: center;
+  width: 45%;
+}
+
+#registration{
+  text-align: center;
+  width: 45%;
+}
+
+/*p #review{
+  width: 45%;
+  padding: 15px;
+}*/
+
+p.review-body{
+
+  text-align: center;
+  word-wrap: break-word;
+
+}
+
+/*#review-body{
+  padding: 0 5px;
+  margin: 10px;
+  word-wrap: break-word;
+}*/
+
+#review{
+  border: 3px solid #173D45;
+  margin-top: 15px;
 }
 
 .museum-index-img {

@@ -1,27 +1,11 @@
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text"><h4> Museum Reviews </h4></li>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu horizontal">
-      <% if user_signed_in? %>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Create Account", new_user_registration_path%></li>
-          <li><%= link_to "Sign In", new_user_session_path%></li>
-      <% end %>
-    </ul>
-    </ul>
-  </div>
-</div>
-
 <div class="row">
-  <div class="small-9 large-centered columns"><h1>Log in</h1></div>
+  <div class="small-12 large-centered columns"><h1>Log in</h1></div>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="row">
+<div class="row" id="login">
+<div class="text-right">
+
   <div class="field small-2 columns">
     <%= f.label :email %>
   </div>
@@ -36,12 +20,16 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
+
+  <% if devise_mapping.rememberable? %>
+  <div class="text-center">
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
+  </div>
   <% end -%>
+</div>
 
   <div class="actions">
     <%= f.submit "Sign In" %>
