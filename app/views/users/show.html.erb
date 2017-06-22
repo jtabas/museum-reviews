@@ -1,4 +1,6 @@
 <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
+<%= image_tag @user.avatar.url if @user.avatar? %>
+
 <p>Email: <%= @user.email %></p>
 <p>Username: <%= @user.username %></p>
 <p>From: <%= @user.city %>, <%= @user.state %></p>
