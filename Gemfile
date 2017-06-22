@@ -8,7 +8,7 @@ gem 'json'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
+gem 'carrierwave'
 gem 'rest-client'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
