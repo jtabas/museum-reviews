@@ -4,8 +4,8 @@ feature 'User can edit a review' do
   let!(:review) { FactoryGirl.create(:review, museum: museum, user: user) }
   let!(:review2) { FactoryGirl.create(:review, museum: museum, user: user) }
   let!(:user) { FactoryGirl.create(:user) }
-
   scenario 'User successfully edits a review' do
+    binding.pry
     sign_in_as(user)
     visit museum_path(museum)
     click_link('Edit This Review', match: :first)
