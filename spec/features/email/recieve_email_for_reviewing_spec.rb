@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'User recieves an email' do
+xfeature 'User recieves an email' do
   scenario "once they review a museum they get an email confirming that they did so" do
     museum = FactoryGirl.create(:museum)
     user = FactoryGirl.create(:user)

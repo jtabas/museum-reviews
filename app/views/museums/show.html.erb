@@ -15,7 +15,7 @@ Address: <%= @museum.location %><br>
 
 <div class="small-12 large-6 columns" id="review-form">
   <% if user_signed_in? %>
-    <%= render "reviews/review_form" %> <!-- Review Form Partial -->
+    <%= render "reviews/review_form" %>
   <% else %>
   <h4> Please sign in or create and account to leave your review. </h4>
   <% end %>
@@ -32,7 +32,6 @@ Address: <%= @museum.location %><br>
        <div class="small-8 small-centered" id="review">
          <h4>Rating: <%= review.rating %></h4>
          <% if review.body %>
-
          <div class="small-12 columns">
           <p class="review-body"><%= review.body %></p>
         </div>
