@@ -7,5 +7,6 @@ FactoryGirl.define do
     state 'Pennsylvania'
     city 'Philadelphia'
     username 'AtTheRealJohnSmith'
+    admin false
   end
 end

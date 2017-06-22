@@ -12,11 +12,11 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/db/schema.rb
 
 /coverage
 /node_modules
 /yarn-error.log
+/db/schema
 
 .byebug_history
 .env

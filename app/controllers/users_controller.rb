@@ -13,7 +13,8 @@ class UsersController < ApplicationController
       flash[:notice] = "Profile Updated Successfully"
       redirect_to user_path(@user)
     else
-      render :edit
+      redirect_to edit_user_path(@user)
+      flash[:notice] = "Please enter correct passord to save changes"
     end
   end
 
