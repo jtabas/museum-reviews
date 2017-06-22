@@ -1,8 +1,13 @@
 Hello <%= @review.user.first_name %>,
 
-We have received your review for <%= @review.musuem %>. Thanks for your contribution!
+Here is your review for <%= @review.museum.name %>. Thanks for your contribution!
 
 Have a swell day!
+
+Rating: <%= @review.rating %>
+<% if !@review.body.empty? %>
+ Body: <%= @review.body %>
+<% end %>
 
 - The Exhibit Philly Team
 

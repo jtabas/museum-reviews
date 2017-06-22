@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.museum = @museum
     @review.user = current_user
     if @review.save
-      ReviewMailer.new_review(@review).deliver_new
+      ReviewMailer.new_review(@review).deliver_now
       flash[:notice] = 'Review added successfully'
       redirect_to museum_path(@museum)
     else
