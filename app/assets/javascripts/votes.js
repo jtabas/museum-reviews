@@ -9,11 +9,14 @@ $(document).ready(function() {
 
 function vote(vote) {
   event.preventDefault();
+  museumId = this.window.location.pathname.split('/')[2]
   reviewId = this.document.activeElement.attributes.id.value
+  console.log("Review id: " + reviewId)
+  console.log("Museum id: " + museumId)
 
   var request = $.ajax({
     method: "POST",
-    url: 'api/v1/reviews/' + reviewId + '/votes',
+    url: '/api/v1/museums/' + museumId + '/reviews/' + reviewId + '/votes',
     data: { vote: vote }
   });
 

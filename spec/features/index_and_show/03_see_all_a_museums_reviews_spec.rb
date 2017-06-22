@@ -8,10 +8,9 @@ feature 'Museum\'s Reviews Show' do
 
   scenario 'User visits Museum path and sees all reviews' do
     visit museum_path(museum)
-
-    expect(page).to have_content(review.rating)
+    expect(page).to have_content(review.score)
     expect(page).to have_content(review.body)
-    expect(page).to have_content("Rating: #{review_no_body.rating}")
-    expect(page).to have_content("Rating: #{reviews_sans_body.rating}")
+    expect(page).to have_content("Score: #{review_no_body.score}")
+    expect(page).to have_content("Score: #{reviews_sans_body.score}")
   end
 end
