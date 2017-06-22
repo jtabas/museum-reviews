@@ -15,6 +15,7 @@ response['results'].each do |result|
   places = RestClient.get "https://maps.googleapis.com/maps/api/place/details/json?placeid=#{result['place_id']}&key=#{key}"
   places = JSON.parse(places)
   museum = places['result']
+  binding.pry
   Museum.create!(
     name: museum['name'],
     location: museum['formatted_address'],
