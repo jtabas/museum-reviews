@@ -4,8 +4,11 @@ import ReactDOM from 'react-dom';
 import MuseumsContainer from './containers/MuseumsContainer';
 
 $(function () {
-  ReactDOM.render(
-    <MuseumsContainer />,
-    document.getElementById('app')
-  );
+  let app = document.getElementById('app')
+  if (app) {
+    ReactDOM.render(
+      <MuseumsContainer />,
+      app
+    );
+  }
 });

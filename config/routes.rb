@@ -24,8 +24,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :reviews, only: [] do
-        resources :votes, only: [:create]
+      resources :museums, only: [] do
+        resources :reviews, only: [] do
+          resources :votes, only: [:create]
+        end
       end
     end
   end

@@ -5,4 +5,7 @@ FactoryGirl.define do
     user
     museum
   end
+  def score
+    self.votes.where(upvote: true).count - self.votes.where(upvote: false).count
+  end
 end
