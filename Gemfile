@@ -9,7 +9,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails'
 gem 'rest-client'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
