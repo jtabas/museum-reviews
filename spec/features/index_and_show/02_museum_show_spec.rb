@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Museums Show' do
+xfeature 'Museums Show' do
   let!(:museum) { FactoryGirl.create(:museum, name: "evnewevwunerwpunrpnu") }
 
   scenario 'User visits Museum show page directly' do
