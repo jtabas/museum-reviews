@@ -9,7 +9,7 @@ feature 'Museum\'s Reviews Create' do
     visit museum_path(museum)
 
     fill_in 'Rating', with: 5
-    fill_in 'Body', with: 'Awesome Museum!!!...JK'
+    fill_in 'Your Review', with: 'Awesome Museum!!!...JK'
 
     click_button 'Create Review'
 
@@ -22,7 +22,7 @@ feature 'Museum\'s Reviews Create' do
     sign_in_as(user)
     visit museum_path(museum)
     fill_in 'Rating', with: ''
-    fill_in 'Body', with: ''
+    fill_in 'Your Review', with: ''
     click_button 'Create Review'
 
     expect(page).to have_content('Rating can\'t be blank')

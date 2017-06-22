@@ -10,7 +10,7 @@ feature 'user signs up' do
     fill_in 'Username', with: 'AtTheRealJohnSmith'
     fill_in 'Password', with: 'Launch'
     fill_in 'Confirm Password', with: 'Launch'
-    fill_in 'Home City', with: 'Philadelphia'
+    fill_in 'City', with: 'Philadelphia'
     fill_in 'State', with: 'Pennsylvania'
     click_button 'Create Account'
     expect(page).to have_content('Account succesfully created')
