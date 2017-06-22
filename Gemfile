@@ -9,13 +9,11 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails'
 gem 'rest-client'
-gem 'carrierwave'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'sendgrid-ruby'
 gem 'simple_form'
-gem 'mini_magick', '~> 4.3'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
