@@ -11,18 +11,32 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <ul>
-      <% if user_signed_in? %>
-        <li><%= link_to "My Profile", user_path(current_user.id) %></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Create Account", new_user_registration_path %></li>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-      <% end %>
-    </ul>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text"><h4> Museum Reviews </h4></li>
+      </div>
 
+      <div class="top-bar-right">
+        <ul class="menu horizontal">
+          <% if user_signed_in? %>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Create Account", new_user_registration_path%></li>
+              <li><%= link_to "Sign In", new_user_session_path%></li>
+          <% end %>
+        </ul>
+        </ul>
+      </div>
+    </div>
+
+    <% if notice == "Signed out successfully." %>
+      <p class="notice" style="color:red"><%= notice %></p>
+    <% else %>
+      <p class="notice" style="color:green"><%= notice %></p>
+    <% end %>
+
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 

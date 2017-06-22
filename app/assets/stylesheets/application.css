@@ -1,16 +1,20 @@
-.top-right-bar{
+.top-bar-right{
   float: right;
 }
 
 .row{
   text-align: center;
-  width: 45%;
+  width: 50%;
 }
 
 h1{
   font-weight: bold;
 }
 
-.field small-3 columns{
-  font-size: 40px;
+.top-bar-left{
+  float: left;
+}
+
+.notice{
+  margin: 0 20px;
 }

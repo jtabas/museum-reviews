@@ -1,10 +1,22 @@
-<h1><%= @museum.name %></h1>
-Name: <%= @museum.name %><br>
-Description: <%= @museum.description %><br>
-Hours: <%= @museum.hours %><br>
+<div class ="row">
+  <h1><%= @museum.name %></h1>
+</div>
+
+<div class="row">
+  <div class="large-10 columns">
+    <ul>
+      <li>Hours: <%= @museum.hours %></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- Name: <%= @museum.name %><br> -->
+<!-- Description: <%= @museum.description %><br> -->
 Address: <%= @museum.location %><br>
-Admission: <%= @museum.admission %><br>
-</p>
+<!-- Admission: <%= @museum.admission %><br> -->
+
 
 <h2>Reviews</h2>
 <% if @reviews %>

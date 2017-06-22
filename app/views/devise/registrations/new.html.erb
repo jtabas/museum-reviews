@@ -1,31 +1,11 @@
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text"><h4> Museum Reviews </h4></li>
-  </div>
-
-  <div class="top-bar-right">
-    <ul class="menu horizontal">
-      <% if user_signed_in? %>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Create Account", new_user_registration_path%></li>
-          <li><%= link_to "Sign In", new_user_session_path%></li>
-      <% end %>
-    </ul>
-    </ul>
-  </div>
-</div>
-
 <div class="row">
   <div class="small-9 large-centered columns"><h1>Sign up</h1></div>
 </div>
 
-
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <div class="row">
+    <div class="text-right">
 
     <div class="field small-3 columns">
       <%= f.label :first_name, "First Name" %>
@@ -55,12 +35,9 @@
     <%= f.email_field :email, autofocus: true %>
     </div>
 
-
-
     <div class="field small-3 columns">
       <%= f.label :password %>
       <% if @minimum_password_length %>
-        <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
       <% end %>
     </div>
     <div class="field small-8 columns">
@@ -88,12 +65,14 @@
     <div class="field small-8 columns">
       <%= f.text_field :state, autofocus: true %>
     </div>
-
-  <div class="actions">
-    <%= f.submit "Create Account" %>
+    <br>
   </div>
+
+    <div class="actions">
+      <%= f.submit "Submit" %>
+    </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 
 </div>
