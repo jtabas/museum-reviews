@@ -34,6 +34,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review Successfully Updated"
       redirect_to museum_path(@museum)
     else
+      flash[:notice] = @review.errors.full_messages.to_sentence
       render :edit
     end
   end
