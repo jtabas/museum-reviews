@@ -25,13 +25,17 @@ Address: <%= @museum.location %><br>
 
 
 <div class="row">
+
 <h2>Reviews</h2>
    <% if @reviews %>
        <% @reviews.each do |review| %>
-       <div class="small-12 columns" id="review">
+       <div class="small-8 small-centered" id="review">
          <h4>Rating: <%= review.rating %></h4>
          <% if review.body %>
-          <p><%= review.body %></p>
+
+         <div class="small-12 columns">
+          <p class="review-body"><%= review.body %></p>
+        </div>
          <% end %>
 
 
