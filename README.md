@@ -4,24 +4,24 @@
 
 # README
 
-  Exhibit Philly is designed to be a resource for exploring Museum's all over Philadelphia! Users can search for museums or look at the list; clicking on the museum takes the user to a show page which has details and reviews. The list of museums is populated using the Google Places api; registered users can leave reviews for museums and vote others reviews, the most popular reviews are shown at the top of the list. Other features include e-mail notifications. a user profile page and the ability to have a profile picture. This project has been a group effort between Brian Karol, Chris Donohue, David MacMurtrie and Joe Tabas.
+  Exhibit Philly is designed for exploring Museum's all over Philadelphia! Users can search for specific museums or look at the list which is populated using the Google Places api. Clicking on the museum takes the user to a show page which has details and reviews about the museum. Registered users can leave reviews for museums and vote on other users reviews, the most popular reviews are shown at the top of the list. Other features include e-mail notifications, a user profile page and user account profile pictures. This project has been a collaboration between Brian Karol, Chris Donohue, David MacMurtrie and Joe Tabas.
 
-  Visit out our site using the link below
+  Visit our site here
   https://museum-reviews.herokuapp.com/
 
 * This project was made using Ruby on Rails, Reactjs, PostgreSQL and Foundation
 
 * Ruby version 2.3.3
 
-* Gems
+* Gems:
   Devise
   Carrierwave
   ActionMailer
 
-* Database creation
+* Database creation:
   run 'rake db:create'
 
-* Database initialization
+* Database initialization:
   run 'rake db:migrate'
 
 * How to run the test suite?
