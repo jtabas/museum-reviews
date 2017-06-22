@@ -14,11 +14,11 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text"><h4> Museum Reviews </h4></li>
+          <li class="menu-text"><%= link_to "Exhibit Philly", museums_path %></li>
       </div>
 
       <div class="top-bar-right">
-        <ul class="menu horizontal">
+        <ul class="menu horizontal" id=top-bar-right>
           <% if user_signed_in? %>
               <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <% else %>

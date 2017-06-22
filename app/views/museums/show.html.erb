@@ -1,55 +1,49 @@
-<<<<<<< HEAD
 <div class ="row">
   <h1><%= @museum.name %></h1>
 </div>
 
 <div class="row">
-  <div class="large-10 columns">
-    <ul>
-      <li>Hours: <%= @museum.hours %></li>
-    </ul>
+  <div class="small-12 large-6 columns" id="museum-information">
+    <h4>Hours:</h4>
+      <ul class ="no-bullet">
+        <% @hours.each do |hour| %>
+            <li><%= hour %></li>
+        <% end %>
+      </ul>
+Address: <%= @museum.location %><br>
   </div>
+
+<div class="small-12 large-6 columns" id="review-form">
+  <% if user_signed_in? %>
+    <%= render "reviews/review_form" %> <!-- Review Form Partial -->
+  <% else %>
+  <h4> Please sign in or create and account to leave your review. </h4>
+  <% end %>
+</div>
+
 </div>
 
 
-
-<!-- Name: <%= @museum.name %><br> -->
-<!-- Description: <%= @museum.description %><br> -->
-=======
-<h1><%= @museum.name %></h1>
-<h3>Rating: <%= @rating %></h3>
-Name: <%= @museum.name %><br>
-Description: <%= @museum.description %><br>
-Hours: <%= @museum.hours %><br>
->>>>>>> master
-Address: <%= @museum.location %><br>
-<!-- Admission: <%= @museum.admission %><br> -->
-
-
+<div class="row">
 <h2>Reviews</h2>
-<% if @reviews %>
-  <% @reviews.each do |review| %>
-    <h4>Rating: <%= review.rating %></h4>
-    <% if review.body %>
-      <p><%= review.body %></p>
-    <% end %>
+   <% if @reviews %>
+       <% @reviews.each do |review| %>
+       <div class="small-12 columns" id="review">
+         <h4>Rating: <%= review.rating %></h4>
+         <% if review.body %>
+          <p><%= review.body %></p>
+         <% end %>
 
-    <% if user_signed_in? && review.user == current_user%>
-    <%= link_to 'Edit This Review', edit_museum_review_path(review.museum, review) %>
-    <%= link_to 'Delete This Review', museum_review_path(review.museum, review), method: :delete %>
-    <% end %>
 
-    <% if user_signed_in? && current_user.admin %>
-    <%= link_to 'Delete as Admin', admin_review_path(review), method: :delete %>
-    <% end %>
-  <% end %>
-<% end %>
-<% if user_signed_in? %>
-  <%= render "reviews/review_form" %>
-<% else %>
-  <ul>
-    <h4> Please sign in or create and account to leave your review. </h4>
-    <li><%= link_to "Create Account", new_user_registration_path%></li>
-    <li><%= link_to "Sign In", new_user_session_path%></li>
-  </ul>
-<% end %>
+         <% if user_signed_in? && review.user == current_user%>
+           <%= link_to 'Edit This Review', edit_museum_review_path(review.museum, review) %><br>
+           <%= link_to 'Delete This Review', museum_review_path(review.museum, review), method: :delete %>
+         <% end %>
+
+         <% if user_signed_in? && current_user.admin %>
+          <%= link_to 'Delete as Admin', admin_review_path(review), method: :delete %>
+         <% end %>
+       </div>
+     <% end %>
+   <% end %>
+ </div>

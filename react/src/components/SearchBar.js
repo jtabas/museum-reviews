@@ -1,10 +1,10 @@
 import React from 'react';
 const SearchBar = props => {
   return (
-    <div className="search-bar small-10 columns" >
-      <label htmlFor="search-bar">
+    <div className="search-bar small-12 columns" >
+      <h4>
         Search for a Museum:
-      </label>
+      </h4>
       <input
         type='text'
         placeholder="Search"

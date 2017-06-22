@@ -1,3 +1,4 @@
+<div class="row">
 <% if controller.action_name == "show" %>
   <h2>Write a new review</h2>
 <%elsif controller.action_name == "edit" %>
@@ -17,15 +18,16 @@
     </div>
   <% end %>
 
+
   <div class="rating">
     <%= form.label :rating %>
     <%= form.text_field :rating %>
   </div>
 
   <div class="body">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+      <%= form.label :body %>
+      <%= form.text_area :body %>
   </div>
-
+</div>
   <%= form.submit %>
 <% end %>

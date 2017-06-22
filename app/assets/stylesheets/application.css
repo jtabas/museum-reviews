@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
+
+.top-bar{
+  background: #5E4221;
+
+}
 .top-bar-right{
   float: right;
 }
 
 .row{
   text-align: center;
-  width: 50%;
 }
 
 h1{
   font-weight: bold;
+  font-family: cursive;
+}
+
+h2{
+  font-family: sans-serif;
 }
 
 .top-bar-left{
@@ -17,4 +27,39 @@ h1{
 
 .notice{
   margin: 0 20px;
+}
+
+body {
+  background-color: #E8D9BA;
+}
+
+.menu-text{
+  background-color: #5E4221;
+}
+
+#top-bar-right{
+  background-color: #5E4221;
+}
+
+.menu{
+    background-color: #5E4221;
+}
+
+#login{
+  text-align: center;
+  width: 45%;
+}
+
+#registration{
+  text-align: center;
+  width: 45%;
+}
+
+#review{
+  padding: 15px;
+}
+
+p #review{
+  width: 45%;
+  margin: 15px;
 }
