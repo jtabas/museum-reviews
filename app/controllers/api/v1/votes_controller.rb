@@ -1,5 +1,4 @@
 class Api::V1::VotesController < ApplicationController
-
   def create
     review = Review.find(params[:review_id])
     if !Vote.where(user: current_user, review: review).empty?
@@ -10,7 +9,7 @@ class Api::V1::VotesController < ApplicationController
     else
       vote = Vote.create(review: review, user: current_user, upvote: params[:vote])
     end
-    VoteMailer.new_vote(vote).deliver_now
+    # VoteMailer.new_vote(vote).deliver_now
     render json: { score: review.score }
   end
 end

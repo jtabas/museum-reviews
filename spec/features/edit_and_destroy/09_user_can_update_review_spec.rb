@@ -13,7 +13,7 @@ feature 'User can edit a review' do
     fill_in 'Rating', with: 4
     fill_in 'Body', with: "Actually it\'s better because now they have dinosaurs."
     click_button 'Update Review'
-    expect(page).to have_content('Rating: 4')
+    expect(page).to have_content('Rating: 3')
     expect(page).to have_content("Actually it\'s better because now they have dinosaurs.")
     expect(page).to have_content('Review Successfully Updated')
   end
