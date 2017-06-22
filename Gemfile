@@ -9,11 +9,11 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails'
 gem 'rest-client'
+gem 'carrierwave', '~> 1.0'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'uglifier', '>= 1.3.0'
 
