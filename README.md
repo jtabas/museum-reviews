@@ -1,6 +1,5 @@
 ![Build Status](https://codeship.com/projects/793b8130-340b-0135-6abb-4afe72fab10a/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/jtabas/museum-reviews.png)
-![Coverage Status](https://coveralls.io/repos/jtabas/museum-reviews/badge.png)
 [![Coverage Status](https://coveralls.io/repos/github/jtabas/museum-reviews/badge.png?branch=master)](https://coveralls.io/github/jtabas/museum-reviews?branch=master)
 # README
 
