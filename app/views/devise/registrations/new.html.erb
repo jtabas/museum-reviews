@@ -89,6 +89,13 @@
       <%= f.text_field :state, autofocus: true %>
     </div>
 
+    <div class="field small-8 columns">
+    <%= f.label :avatar %>
+  </div>
+    <div class="field small-8 columns">
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Create Account" %>
   </div>
