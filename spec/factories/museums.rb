@@ -5,5 +5,6 @@ FactoryGirl.define do
     location '222 N 20th St'
     phone_number 20342340
     website 'benjiFrankspad.com'
+
   end
 end
