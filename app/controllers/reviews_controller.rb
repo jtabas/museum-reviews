@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
     @museum.update_attribute(:rating, @new_museum_rating)
 
     if @review.save
+      ReviewMailer.new_review(@review).deliver_now
       flash[:notice] = 'Review added successfully'
       redirect_to museum_path(@museum)
     else
