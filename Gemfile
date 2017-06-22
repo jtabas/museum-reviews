@@ -8,13 +8,12 @@ gem 'json'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'rails'
-gem 'rest-client'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
+gem 'rest-client'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'mini_magick', '~> 4.3'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
