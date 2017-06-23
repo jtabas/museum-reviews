@@ -4,6 +4,24 @@ body {
   background-color: #E8D9BA;
   font-family: 'Old Standard TT', serif;
   font-size: 20px
+
+#show-header {
+  color: black;
+}
+
+.museum-photo-show {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  display: block;
+}
+
+#show-img-container {
+  padding: 15px 0px;
+}
+
+#Museums-Container {
+  text-align: left;
 }
 
 .top-bar{
@@ -24,6 +42,19 @@ body {
 
 #top-bar-right{
   background-color: #173D45;
+
+.score {
+  display: block;
+}
+
+#score-buttons {
+  align-self: center;
+  display:inline-block;
+  margin: 0px;
+}
+
+#score-buttons button {
+  background-color: #173d45;
 }
 
 .row{
@@ -33,6 +64,7 @@ body {
 h1{
   font-weight: bold;
   font-family: cursive;
+  text-align: center;
 }
 
 h2{
@@ -69,10 +101,11 @@ p.review-body{
   text-align: center;
   word-wrap: break-word;
 }
-
-#review{
+  
+#review {
   border: 3px solid #173D45;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .museum-index-img {
@@ -100,4 +133,12 @@ p.review-body{
 
 #user-information {
   margin-bottom: 20px;
+}
+
+.review-avatar {
+  padding: 10px;
+}
+
+.museum-photo {
+  padding: 13px;
 }

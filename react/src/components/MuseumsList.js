@@ -9,7 +9,7 @@ class MuseumsList extends Component {
     this.state = {
       museums: [],
       currentPage: 1,
-      museumsPerPage: 6
+      museumsPerPage: 3
     };
 
     this.previousPage = this.previousPage.bind(this);
@@ -41,7 +41,7 @@ class MuseumsList extends Component {
     let currentMuseums;
 
     if (indexOfFirstMuseum <= 0) {
-      currentMuseums = this.state.museums.slice(0, 6);
+      currentMuseums = this.state.museums.slice(0, 3);
     } else if (indexOfLastMuseum > this.state.museums.length) {
       indexOfLastMuseum = (this.state.currentPage - 1) * this.state.museumsPerPage;
       currentMuseums = this.state.museums.slice(indexOfLastMuseum, rightBoundIndex);
