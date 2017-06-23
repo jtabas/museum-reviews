@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
 
+#show-header {
+  color: black;
+}
+
+.museum-photo-show {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  display: block;
+}
+
+#show-img-container {
+  padding: 15px 0px;
+}
+
 #Museums-Container {
   text-align: left;
 }
@@ -12,6 +27,20 @@
   float: right;
 }
 
+.score {
+  display: block;
+}
+
+#score-buttons {
+  align-self: center;
+  display:inline-block;
+  margin: 0px;
+}
+
+#score-buttons button {
+  background-color: #173d45;
+}
+
 .row{
   text-align: center;
 }
@@ -19,6 +48,7 @@
 h1{
   font-weight: bold;
   font-family: cursive;
+  text-align: center;
 }
 
 h2{
@@ -59,11 +89,6 @@ body {
   width: 45%;
 }
 
-/*p #review{
-  width: 45%;
-  padding: 15px;
-}*/
-
 p.review-body{
 
   text-align: center;
@@ -77,9 +102,10 @@ p.review-body{
   word-wrap: break-word;
 }*/
 
-#review{
+#review {
   border: 3px solid #173D45;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .museum-index-img {
