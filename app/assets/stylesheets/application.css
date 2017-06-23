@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
 
+#Museums-Container {
+  text-align: left;
+}
+
 .top-bar{
   background: #173D45;
 
@@ -87,7 +91,7 @@ p.review-body{
 
 .museum-info-box {
   border: 1px solid black;
-  clear: both;
+  clear: left;
   overflow: auto;
   padding: 15px 0px;
   margin: 30px 0px;
