@@ -37,13 +37,24 @@
    <% if @reviews %>
        <% @reviews.each do |review| %>
        <div class="small-8 small-centered" id="review">
-         <% unless review.user.avatar.url.nil? then %>
-       <%= image_tag review.user.avatar.url %>
-       <% end %>
+         <div class="review-avatar">
+           <% unless review.user.avatar.url.nil? then %>
+            <%= image_tag review.user.avatar.url %>
+           <% end %>
           <%= review.user.username %>'s thoughts:
+<<<<<<< HEAD
+        </div>
+         <h4>Rating: <%= review.rating %></h4>
+         <% if review.body %>
+         <div class="small-12 columns">
+          <p class="review-body"><%= review.body %></p>
+        </div>
+        <p id="score_<%= review.id %>">
+=======
          <h2>Rating: <%= review.rating %></h2>
          <% if review.body %><p class="review-body"><%= review.body %></p>
         <h4 class="score" id="score_<%= review.id %>">
+>>>>>>> master
           Score: <%= review.score %>
         </h4>
         <div class="button-group" id="score-buttons">
