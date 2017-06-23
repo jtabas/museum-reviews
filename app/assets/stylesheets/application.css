@@ -114,3 +114,11 @@ p.review-body{
 #user-information {
   margin-bottom: 20px;
 }
+
+.review-avatar {
+  padding: 10px;
+}
+
+.museum-photo {
+  padding: 13px;
+}
