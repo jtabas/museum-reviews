@@ -53,7 +53,7 @@
     </div>
 
     <div class="field small-3 columns">
-      <%= f.label :city, "City" %>
+      <%= f.label :city, "Home City" %>
     </div>
     <div class="field small-8 columns">
       <%= f.text_field :city, autofocus: true %>
@@ -65,23 +65,24 @@
     <div class="field small-8 columns">
       <%= f.text_field :state, autofocus: true %>
     </div>
+    <br>
 
-    <div class="field small-8 columns">
-    <%= f.label :avatar %>
-  </div>
-    <div class="field small-8 columns">
+    <div class="field small-3 columns">
+      <%= f.label :avatar %>
+    </div>
+    <div class="field small-9 columns">
     <%= f.file_field :avatar %>
-  </div>
+    </div>
+</div>
 
+<div class="create-account small-12 columns">
   <div class="actions">
     <%= f.submit "Create Account" %>
   </div>
 
-    <div class="actions">
-      <%= f.submit "Submit" %>
-    </div>
-<% end %>
+
+  <% end %>
 
   <%= render "devise/shared/links" %>
-
+</div>
 </div>
