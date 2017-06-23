@@ -22,7 +22,11 @@ h1{
 }
 
 h2{
-  font-family: sans-serif;
+  font-family: 'Old Standard TT', serif;
+}
+
+h4{
+  font-family: 'Old Standard TT', serif;
 }
 
 .top-bar-left{
@@ -35,6 +39,8 @@ h2{
 
 body {
   background-color: #E8D9BA;
+  font-family: 'Old Standard TT', serif;
+  font-size: 20px
 }
 
 .menu-text{
@@ -101,6 +107,7 @@ p.review-body{
   margin: 15px 15%;
 }
 
+<<<<<<< HEAD
 /*.avatar{
   padding-right: 30px;
 }*/
@@ -108,3 +115,12 @@ p.review-body{
 /*.create-account{
   padding-left: 60px;
 }*/
+=======
+#profile_links {
+  padding-left: 25px;
+}
+
+#user-information {
+  margin-bottom: 20px;
+}
+>>>>>>> master

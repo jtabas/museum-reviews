@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.css">
+<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
   <head>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -18,6 +19,7 @@
         <ul class="menu horizontal" id=top-bar-right>
           <% if user_signed_in? %>
               <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "My Profile", user_path(current_user) %></li>
             <% else %>
               <li><%= link_to "Create Account", new_user_registration_path%></li>
               <li><%= link_to "Sign In", new_user_session_path%></li>
