@@ -42,6 +42,7 @@ body {
 
 #top-bar-right{
   background-color: #173D45;
+}
 
 .score {
   display: block;
@@ -101,7 +102,7 @@ p.review-body{
   text-align: center;
   word-wrap: break-word;
 }
-  
+
 #review {
   border: 3px solid #173D45;
   margin-top: 15px;
