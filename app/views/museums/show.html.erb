@@ -1,6 +1,8 @@
 <div class ="row">
   <h1><%= @museum.name %></h1>
+  <% unless @museum.photo.nil? %>
   <%= image_tag @museum.photo %>
+  <% end %>
 </div>
 
 <div class="row">
@@ -13,7 +15,7 @@
       </ul>
     <%= @museum.location %><br>
     <%= @museum.phone_number %><br>
-    <%= @museum.website %><br>
+    <%= link_to @museum.website, @museum.website %><br>
     Patron Rating: <%= @museum.rating %><br>
   </div>
 
@@ -33,7 +35,9 @@
    <% if @reviews %>
        <% @reviews.each do |review| %>
        <div class="small-8 small-centered" id="review">
-         <%= image_tag review.user.avatar.url if current_user.avatar? %>
+         <% unless review.user.avatar.url.nil? then %>
+       <%= image_tag review.user.avatar.url %>
+       <% end %>
           <%= review.user.username %>'s thoughts:
          <h4>Rating: <%= review.rating %></h4>
          <% if review.body %>

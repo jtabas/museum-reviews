@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xfeature 'User visits user show page' do
+feature 'User visits user show page' do
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'User visits profile' do
