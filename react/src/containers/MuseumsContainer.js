@@ -81,8 +81,8 @@ class MuseumsContainer extends Component {
     }
 
     return (
-      <div>
-      <div className="large-12 large-centered columns"><h1>Exhibit Philly</h1></div>
+      <div className="large-12 large-centered columns" id="Museums-Container">
+        <h1>Exhibit Philly</h1>
         <SearchBar
           onChange={this.onChange}
           handleClear={this.handleClear}
