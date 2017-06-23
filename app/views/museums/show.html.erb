@@ -1,10 +1,10 @@
-<div class ="row">
+<a href=<%= @museum.website %> id="show-header">
   <h1><%= @museum.name %></h1>
-    <div class="museum-photo">
-    <% unless @museum.photo.nil? %>
-    <%= image_tag @museum.photo %>
+</a>
+<div id="show-img-container">
+  <% unless @museum.photo.nil? %>
+    <%= image_tag(@museum.photo, class: "museum-photo-show") %>
     <% end %>
-</div>
 </div>
 
 <div class="row">
@@ -42,6 +42,7 @@
             <%= image_tag review.user.avatar.url %>
            <% end %>
           <%= review.user.username %>'s thoughts:
+<<<<<<< HEAD
         </div>
          <h4>Rating: <%= review.rating %></h4>
          <% if review.body %>
@@ -49,16 +50,23 @@
           <p class="review-body"><%= review.body %></p>
         </div>
         <p id="score_<%= review.id %>">
+=======
+         <h2>Rating: <%= review.rating %></h2>
+         <% if review.body %><p class="review-body"><%= review.body %></p>
+        <h4 class="score" id="score_<%= review.id %>">
+>>>>>>> master
           Score: <%= review.score %>
-        </p>
-        <button id="<%= review.id%>" class="upvote">Upvote</button>
-        <button id="<%= review.id%>" class="downvote">Downvote</button>
-         <% end %>
+        </h4>
+        <div class="button-group" id="score-buttons">
+          <button id="<%= review.id%>" class="button upvote">Upvote</button>
+          <button id="<%= review.id%>" class="button downvote">Downvote</button>
+        </div>
 
-
+       <% end %>
+        <br>
          <% if user_signed_in? && review.user == current_user%>
-           <%= link_to 'Edit This Review', edit_museum_review_path(review.museum, review) %><br>
-           <%= link_to 'Delete This Review', museum_review_path(review.museum, review), method: :delete %>
+           <%= link_to 'Edit Review', edit_museum_review_path(review.museum, review) %>
+           <%= link_to 'Delete Review', museum_review_path(review.museum, review), method: :delete %>
          <% end %>
 
          <% if user_signed_in? && current_user.admin %>
