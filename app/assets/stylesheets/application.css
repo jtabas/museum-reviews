@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=UnifrakturMaguntia');
 
+body {
+  background-color: #E8D9BA;
+  font-family: 'Old Standard TT', serif;
+  font-size: 20px
+}
+
 #show-header {
   color: black;
 }
@@ -21,10 +27,22 @@
 
 .top-bar{
   background: #173D45;
-
 }
+
+.menu-text{
+  background-color: #173D45;
+}
+
 .top-bar-right{
   float: right;
+}
+
+.top-bar-left{
+  float: left;
+}
+
+#top-bar-right{
+  background-color: #173D45;
 }
 
 .score {
@@ -59,30 +77,16 @@ h4{
   font-family: 'Old Standard TT', serif;
 }
 
-.top-bar-left{
-  float: left;
-}
-
 .notice{
   margin: 0 20px;
 }
 
-body {
-  background-color: #E8D9BA;
-  font-family: 'Old Standard TT', serif;
-  font-size: 20px
-}
-
-.menu-text{
-  background-color: #173D45;
-}
-
-#top-bar-right{
-  background-color: #173D45;
+#Museums-Container {
+  text-align: left;
 }
 
 .menu{
-    background-color: #173D45;
+  background-color: #173D45;
 }
 
 #login{
@@ -96,17 +100,9 @@ body {
 }
 
 p.review-body{
-
   text-align: center;
   word-wrap: break-word;
-
 }
-
-/*#review-body{
-  padding: 0 5px;
-  margin: 10px;
-  word-wrap: break-word;
-}*/
 
 #review {
   border: 3px solid #173D45;
@@ -133,12 +129,18 @@ p.review-body{
   margin: 15px 15%;
 }
 
-
-
 #profile_links {
   padding-left: 25px;
 }
 
 #user-information {
   margin-bottom: 20px;
+}
+
+.review-avatar {
+  padding: 10px;
+}
+
+.museum-photo {
+  padding: 13px;
 }
