@@ -1,5 +1,6 @@
 <div class ="row">
   <h1><%= @museum.name %></h1>
+  <%= image_tag @museum.photo %>
 </div>
 
 <div class="row">
@@ -10,7 +11,10 @@
             <li><%= hour %></li>
         <% end %>
       </ul>
-Address: <%= @museum.location %><br>
+    <%= @museum.location %><br>
+    <%= @museum.phone_number %><br>
+    <%= @museum.website %><br>
+    Patron Rating: <%= @museum.rating %><br>
   </div>
 
 <div class="small-12 large-6 columns" id="review-form">
@@ -23,23 +27,24 @@ Address: <%= @museum.location %><br>
 
 </div>
 
-
 <div class="row">
 
 <h2>Reviews</h2>
    <% if @reviews %>
        <% @reviews.each do |review| %>
        <div class="small-8 small-centered" id="review">
+         <%= image_tag review.user.avatar.url if current_user.avatar? %>
+          <%= review.user.username %>'s thoughts:
          <h4>Rating: <%= review.rating %></h4>
-        <p id="score_<%= review.id %>">
-          Score: <%= review.score %>
-        </p>
-          <button id="<%= review.id%>" class="upvote">Upvote</button>
-          <button id="<%= review.id%>" class="downvote">Downvote</button>
          <% if review.body %>
          <div class="small-12 columns">
           <p class="review-body"><%= review.body %></p>
         </div>
+        <p id="score_<%= review.id %>">
+          Score: <%= review.score %>
+        </p>
+        <button id="<%= review.id%>" class="upvote">Upvote</button>
+        <button id="<%= review.id%>" class="downvote">Downvote</button>
          <% end %>
 
 
