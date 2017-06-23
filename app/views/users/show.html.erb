@@ -1,11 +1,21 @@
-<h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
-<%= image_tag @user.avatar.url if @user.avatar? %>
-<p>Email: <%= @user.email %></p>
-<p>Username: <%= @user.username %></p>
-<p>From: <%= @user.city %>, <%= @user.state %></p>
-<%= link_to 'Edit my Profile', edit_user_path(@user) %><br>
-<%= link_to 'Delete my Account', user_path(@user), method: :delete %>
-<br>
-<% if @user.admin %>
-<%= link_to 'See All Users', admin_users_path %>
-<% end %>
+<div class="row">
+  <div class="small-12 large-6 columns" id="user-information">
+    <h1><%= @user.first_name %> <%= @user.last_name %>'s Profile</h1>
+      <% unless @user.avatar.url.nil? then %>
+        <%= image_tag @user.avatar.url %>
+      <% end %>
+    <div>Email: <%= @user.email %></div>
+    <div>Username: <%= @user.username %></div>
+    <div>From: <%= @user.city %>, <%= @user.state %></div>
+  </div>
+</div>
+<div class="top-bar">
+  <div id='profile_links'>
+    <%= link_to 'Edit my Profile', edit_user_path(@user) %><br>
+    <%= link_to 'Delete my Account', user_path(@user), method: :delete %>
+    <br>
+    <% if @user.admin %>
+    <%= link_to 'See All Users', admin_users_path %>
+    <% end %>
+  </div>
+</div>

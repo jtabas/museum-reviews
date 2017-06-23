@@ -1,62 +1,67 @@
-<h2>Edit Profile</h2>
+<div class="small-12 columns text-center">
+  <h1>Edit Profile</h1>
+</div>
 
 <%= form_for(@user) do |f| %>
+<div class="row" id="registration">
+  <div class="text-right">
 
-  <div class="field">
-    <%= f.label :first_name, "First Name" %><br />
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name, "Last Name" %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :city, "Home City" %><br />
-    <%= f.text_field :city, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state, autofocus: true %>
-  </div>
-
-  <div class="field">
-  <%= f.label :avatar %>
+<div class="field small-3 columns">
+  <%= f.label :first_name, "First Name" %>
 </div>
-  <div class="field">
-  <%= f.file_field :avatar %>
+<div class="field small-8 columns">
+<%= f.text_field :first_name, autofocus: true %>
+</div>
+
+<div class="field small-3 columns">
+  <%= f.label :last_name, "Last Name" %>
+</div>
+<div class="field small-8 columns">
+<%= f.text_field :last_name, autofocus: true %>
+</div>
+
+<div class="field small-3 columns">
+  <%= f.label :username %>
+</div>
+<div class="field small-8 columns">
+  <%= f.text_field :username, autofocus: true %>
+</div>
+
+<div class="field small-3 columns">
+  <%= f.label :email %>
+</div>
+<div class="field small-8 columns">
+<%= f.email_field :email, autofocus: true %>
+</div>
+<div class="field small-3 columns">
+  <%= f.label :city, "City" %>
+</div>
+<div class="field small-8 columns">
+  <%= f.text_field :city, autofocus: true %>
+</div>
+
+<div class="field small-3 columns">
+  <%= f.label :state %>
+</div>
+<div class="field small-8 columns">
+  <%= f.text_field :state, autofocus: true %>
+</div>
+
+<div class="field small-3 columns">
+<%= f.label :avatar %>
+</div>
+<div class="field small-8 columns">
+<%= f.file_field :avatar %>
 </div>
 
 <h3>
   Please enter your password to confirm changes.
 </h3>
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "6 characters minumum"  %>
   </div>
-
-  <div class="actions">
+  <div class="actions small-4 columns">
     <%= f.submit "Update Profile" %>
   </div>
 <% end %>
+</div>
