@@ -31,6 +31,11 @@ Address: <%= @museum.location %><br>
        <% @reviews.each do |review| %>
        <div class="small-8 small-centered" id="review">
          <h4>Rating: <%= review.rating %></h4>
+        <p id="score_<%= review.id %>">
+          Score: <%= review.score %>
+        </p>
+          <button id="<%= review.id%>" class="upvote">Upvote</button>
+          <button id="<%= review.id%>" class="downvote">Downvote</button>
          <% if review.body %>
          <div class="small-12 columns">
           <p class="review-body"><%= review.body %></p>
