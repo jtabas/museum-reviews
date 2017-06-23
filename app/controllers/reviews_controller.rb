@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
       redirect_to museum_path(@museum)
     else
       flash[:notice] = @review.errors.full_messages.to_sentence
-      render 'museums/show'
+      redirect_to museum_path(@museum)
     end
   end
 
