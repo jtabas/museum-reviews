@@ -87,7 +87,6 @@ class MuseumsContainer extends Component {
           handleClear={this.handleClear}
           value={this.state.searchTerm}
         />
-        <h3>Museums</h3>
         <MuseumsList
           museums={museumsToShow}
         />
