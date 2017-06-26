@@ -21,13 +21,13 @@
     Patron Rating: <%= @museum.rating %><br>
   </div>
 
-<div class="small-12 large-6 columns" id="review-form">
-  <% if user_signed_in? %>
-    <%= render "reviews/review_form" %>
-  <% else %>
-  <h4> Please sign in or create and account to leave your review. </h4>
-  <% end %>
-</div>
+  <div class="small-12 large-6 columns" id="review-form">
+    <% if user_signed_in? %>
+      <%= render "reviews/review_form" %>
+    <% else %>
+      <h4> Please sign in or create and account to leave your review. </h4>
+    <% end %>
+  </div>
 
 </div>
 
