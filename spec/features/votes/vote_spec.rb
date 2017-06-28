@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User votes" do
+xfeature "User votes" do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:review) { FactoryGirl.create(:review, user: user, museum: museum) }
   let!(:museum) { FactoryGirl.create(:museum) }

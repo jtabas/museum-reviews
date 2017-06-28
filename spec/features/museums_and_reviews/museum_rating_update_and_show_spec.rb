@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'user update a musem\'s rating' do
+xfeature 'user update a musem\'s rating' do
   let!(:museum) { FactoryGirl.create(:museum) }
   let!(:user1) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user, email: 'email@email.com') }
