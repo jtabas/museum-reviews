@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'User can edit a review' do
+xfeature 'User can edit a review' do
   let!(:museum) { FactoryGirl.create(:museum, name: "I will Implore him to Do So") }
   let!(:review) { FactoryGirl.create(:review, museum: museum) }
   let!(:review2) { FactoryGirl.create(:review, museum: museum) }

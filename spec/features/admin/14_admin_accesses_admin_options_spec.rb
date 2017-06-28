@@ -9,7 +9,6 @@ feature 'Admin access admin functions' do
   scenario 'Admin sees users link' do
     sign_in_as(admin)
     visit user_path(admin)
-    expect(page).to have_content 'Admin Features'
     expect(page).to have_link 'See All Users'
   end
 
