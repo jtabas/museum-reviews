@@ -10,7 +10,7 @@ xfeature 'User can edit their own review' do
     visit museum_path(museum)
 
     click_link('Edit Review', match: :first)
-save_and_open_page
+
     fill_in 'Rating', with: 4
     fill_in 'Your Review', with: "Actually it\'s better because now they have dinosaurs."
     click_button 'Update Review'

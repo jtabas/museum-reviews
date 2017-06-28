@@ -11,7 +11,7 @@ xfeature 'User recieves an email' do
     fill_in "Rating", with: "1"
     fill_in "Your Review", with: "God, some people..."
     click_button "Create Review"
-    save_and_open_page
+    
 
     expect(page).to have_content("God, some people...")
     expect(ActionMailer::Base.deliveries.count).to eq(1)
